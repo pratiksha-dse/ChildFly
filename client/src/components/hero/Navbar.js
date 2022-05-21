@@ -145,7 +145,7 @@ const Navbar = (props) => {
         authContext.setIsAdmin(isAdmin);
         UserService.addUser(User).then((data) => {
             
-       
+         console.log(User);
             setTimeout(() => {
                   //   props.history.push("/#/add");
               }, 2000);
