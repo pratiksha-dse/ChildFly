@@ -105,6 +105,12 @@ export default ({
       ? event.time
       : null
     : null;
+    const contacT = (event ? event.contact : null)
+    ? event
+      ? event.contact
+      : null
+    : null;  
+
   console.log(event);
   return (
     <Container>
@@ -124,6 +130,13 @@ export default ({
               {(event ? event.title : null)
                 ? event
                   ? event.title
+                  : null
+                : heading}
+            </Heading>
+            <Heading>
+              {(event ? event.status : null)
+                ? event
+                  ? event.status
                   : null
                 : heading}
             </Heading>
@@ -148,6 +161,9 @@ export default ({
                 <Key><PrimaryButton as="a" href={reglink} target="_blank">
               {"Registration Link"}
             </PrimaryButton></Key>
+              </Statistic>
+              <Statistic key={2}>
+                <Key>Contact: {contacT}</Key>
               </Statistic>
            
             </Statistics>

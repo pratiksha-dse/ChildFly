@@ -140,6 +140,7 @@ const Navbar = (props) => {
       if (isAuthenticated) {
         authContext.setUser(user);
         setuser({name:user.name,email:user.email})
+        console.log(user);
         authContext.setIsAuthenticated(isAuthenticated);
         authContext.setIsAdmin(isAdmin);
         UserService.addUser(User).then((data) => {

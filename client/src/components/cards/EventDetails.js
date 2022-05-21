@@ -193,11 +193,18 @@ export default () => {
                 <TextInfo>
                   <TitleReviewContainer>
                     <Title>{event.title}</Title>
+                  
                     {/* <RatingsInfo>
                       <StarIcon />
               <Rating>{event.rating}</Rating>
                     </RatingsInfo> */}
                   </TitleReviewContainer>
+                  <IconWithText>
+                      <IconContainer>
+                        <DateIcon />
+                      </IconContainer>
+                      <Text>{event.status}</Text>
+                    </IconWithText>
                   <SecondaryInfoContainer>
                     <IconWithText>
                       <IconContainer>
@@ -219,6 +226,12 @@ export default () => {
                       </IconContainer>
                       <a href={event.reglink} target="_blank">
                     <Text>Registration Link</Text></a>
+                    </IconWithText>
+                    <IconWithText>
+                      <IconContainer>
+                        <TimeIcon />
+                      </IconContainer>
+                      <Text>{event.contact}</Text>
                     </IconWithText>
                  
                   </SecondaryInfoContainer>

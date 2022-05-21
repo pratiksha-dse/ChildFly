@@ -81,6 +81,9 @@ const EventEdit = ({
     time: "",
     reglink: "",
     description: "",
+    status:"",
+    contact:"",
+    userId:""
   });
   const [message, setMessage] = useState(eventOld);
   let timerID = useRef(eventOld);
@@ -103,6 +106,9 @@ const EventEdit = ({
       time: "",
       reglink: "",
       description: "",
+      contact:"",
+      status:"",
+      userId:""
     });
   };
 
@@ -117,6 +123,8 @@ const EventEdit = ({
       time: event.time === "" ? eventOld.time : event.time,
       reglink: event.reglink === "" ? eventOld.reglink : event.reglink,
       description: event.description === "" ? eventOld.description : event.description,
+      contact:event.contact===""? eventOld.contact:event.contact,
+      status:event.status===""? eventOld.status:event.status,
     };
 
     EventService.editEvent(newEvent, SEID).then((data) => {
@@ -220,6 +228,20 @@ const EventEdit = ({
               value={event.description}
               onChange={onChange}
               placeholder="Description"
+            />
+              <Input
+              type="text"
+              name="contact"
+              value={event.contact}
+              onChange={onChange}
+              placeholder="Contact No"
+            />
+              <Input
+              type="text"
+              name="status"
+              value={event.status}
+              onChange={onChange}
+              placeholder="Status"
             />
             <p align="right">
               <SubmitButton type="submit">

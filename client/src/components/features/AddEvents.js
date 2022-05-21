@@ -78,6 +78,9 @@ const AddEvents = ({
         time: "",
         reglink: "",
         description: "",
+        contact:"",
+            status:"",
+            userId:""
     });
     const [message, setMessage] = useState(null);
     let timerID = useRef(null);
@@ -95,11 +98,14 @@ const AddEvents = ({
     const resetForm = () => {
         setEvent({
             title: "",
-        img: "",
+            img: "",
             date: "",
             time: "",
             reglink: "",
             description: "",
+            contact:"",
+            status:"",
+            userId:""
         });
     };
 
@@ -197,6 +203,20 @@ const AddEvents = ({
                             value={event.reglink}
                             onChange={onChange}
                             placeholder="Registration link"
+                        />
+                        <Input
+                            type="text"
+                            name="contact"
+                            value={event.contact}
+                            onChange={onChange}
+                            placeholder="Contact No"
+                        />
+                        <Input
+                            type="text"
+                            name="status"
+                            value={event.status}
+                            onChange={onChange}
+                            placeholder="Status"
                         />
                         <Input
                             type="text"
