@@ -106,7 +106,7 @@ const Navbar = (props) => {
         <NavLink href="#about">Home</NavLink>
         <NavLink href="#admin_event">Events</NavLink>
         {/* <NavLink href="#addevents">Add Events</NavLink>*/}
-        <NavLink href="#admin_session">Sessions</NavLink>
+        {/* <NavLink href="#admin_session">Sessions</NavLink> */}
         {/*   <NavLink href="#addsessions">Add Sessions</NavLink>*/}
         {/* <NavLink href="#userdetails">Team</NavLink> */}
         {/* <NavLink onClick={onClickLogoutHandler} href="#">
@@ -142,7 +142,14 @@ const Navbar = (props) => {
         setuser({name:user.name,email:user.email})
         authContext.setIsAuthenticated(isAuthenticated);
         authContext.setIsAdmin(isAdmin);
- 
+        UserService.addUser(User).then((data) => {
+            
+       
+            setTimeout(() => {
+                  //   props.history.push("/#/add");
+              }, 2000);
+        
+      });
         //props.history.push('/todos');
       } else {
         alert(message.msgBody);

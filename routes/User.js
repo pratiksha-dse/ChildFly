@@ -95,6 +95,7 @@ userRouter.post("/changepwd", (req, res) => {
 userRouter.post("/adduser", (req, res) => {
   console.log("doing2");
   const {name,email } = req.body;
+  console.log(req.body);
   // const { title,  date,time,reglink,description} = req.body;
   const newUser = new User({
    name,
