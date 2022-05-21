@@ -31,7 +31,7 @@ const EventSchema = new mongoose.Schema({
         required:true,
         min:1
     },
-    status:{
+    email:{
         type: String,
         required:true,
         min:1

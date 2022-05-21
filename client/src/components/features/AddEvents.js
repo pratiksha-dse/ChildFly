@@ -79,7 +79,7 @@ const AddEvents = ({
       
         description: "",
         contact:"",
-            status:"",
+        email:"",
            
     });
     const [message, setMessage] = useState(null);
@@ -104,7 +104,8 @@ const AddEvents = ({
           
             description: "",
             contact:"",
-            status:"Pending",
+            email:"",
+           
           
         });
     };
@@ -112,6 +113,7 @@ const AddEvents = ({
     const onSubmit = (e) => {
         e.preventDefault();
         const tmpEvents = [...events, event];
+        // UserService.getId().then((data)=>{})
         EventService.postEvent(event).then((data) => {
             const { message } = data;
             setMessage(message);
@@ -212,6 +214,20 @@ const AddEvents = ({
                             onChange={onChange}
                             placeholder="Contact No"
                         />
+                            <Input
+                            type="email"
+                            name="email"
+                            value={event.email}
+                            onChange={onChange}
+                            placeholder="Email"
+                        />
+                               {/* <Input
+                            type="email"
+                            name="email"
+                            value={event.email}
+                            onChange={onChange}
+                            placeholder="Email"
+                        /> */}
                   
                         <Input
                             type="text"

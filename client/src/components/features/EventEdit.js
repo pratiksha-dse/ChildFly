@@ -83,6 +83,7 @@ const EventEdit = ({
     description: "",
     status:"",
     contact:"",
+    email:"",
  
   });
   const [message, setMessage] = useState(eventOld);
@@ -108,6 +109,7 @@ const EventEdit = ({
       description: "",
       contact:"",
       status:"",
+      email:"",
     
     });
   };
@@ -124,6 +126,7 @@ const EventEdit = ({
       description: event.description === "" ? eventOld.description : event.description,
       contact:event.contact===""? eventOld.contact:event.contact,
       status:event.status===""? eventOld.status:event.status,
+      status:event.email===""? eventOld.status:event.email,
     };
 
     EventService.editEvent(newEvent, SEID).then((data) => {
@@ -235,6 +238,13 @@ const EventEdit = ({
               value={event.status}
               onChange={onChange}
               placeholder="Status"
+            />
+              <Input
+              type="text"
+              name="email"
+              value={event.email}
+              onChange={onChange}
+              placeholder="Email"
             />
             <p align="right">
               <SubmitButton type="submit">

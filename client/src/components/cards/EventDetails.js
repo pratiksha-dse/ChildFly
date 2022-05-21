@@ -231,6 +231,14 @@ export default () => {
                
                  
                   </SecondaryInfoContainer>
+                  <SecondaryInfoContainer>
+                  <IconWithText>
+                      <IconContainer>
+                        <TimeIcon />
+                      </IconContainer>
+                      <Text>{event.email}</Text>
+                    </IconWithText>
+             </SecondaryInfoContainer>
                   {/* <Description>{event.description}</Description> */}
                 </TextInfo>
                 <a href={isAdmin?("#/admin_event_edit?" + event._id):("#/event?" + event._id)}>
