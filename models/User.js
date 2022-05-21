@@ -16,7 +16,7 @@ const UserSchema = new mongoose.Schema({
     max: 13,
   },
 
-  // todos: [{ type: mongoose.Schema.Types.ObjectId, ref: "Todo" }],
+   userIds: [{ type: mongoose.Schema.Types.ObjectId, ref: "Event" }],
 });
 
 module.exports = mongoose.model("User", UserSchema);

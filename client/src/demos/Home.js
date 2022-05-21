@@ -6,10 +6,7 @@ import LetUsTalk from "components/LetsTalk";
 
 import tw from "twin.macro";
 import MainFeature1 from "components/features/TwoColWithButton.js";
-// import Features from "components/features/VerticalWithAlternateImageAndText.js";
-// import Blog from "components/blogs/ThreeColSimpleWithImage.js";
-// import Testimonial from "components/testimonials/TwoColumnWithImage.js";
-// import ContactUsForm from "components/forms/SimpleContactUs.js";
+import img from "images/labour.svg";
 import Footer from "components/footers/MiniCenteredFooter.js";
 import { AuthContext } from "../Context/AuthContext";
 
@@ -32,10 +29,10 @@ export default () => {
           <Hero getstarted="#login" />
           <div id="about">
             <MainFeature1
-              subheading={<Subheading>About</Subheading>}
-              heading="Programming Club (KamandPrompt)"
+              subheading={<Subheading>Let every child fly :)</Subheading>}
+              heading="Stop Child Labour!"
               buttonRounded={false}
-              imageSrc="https://pc.iitmandi.co.in/img/kamandpromptlogo.svg"
+              imageSrc={img}
             />
           </div>
           {/* <div id="login">

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
 import { Container as ContainerBase } from "components/misc/Layouts.js";
-import logo from "../../images/2-removebg-preview.png";
+import logo from "../../images/logo.png";
 import { ReactComponent as FacebookIcon } from "../../images/facebook-icon.svg";
 import { ReactComponent as TwitterIcon } from "../../images/twitter-icon.svg";
 import { ReactComponent as YoutubeIcon } from "../../images/youtube-icon.svg";
@@ -55,8 +55,8 @@ export default () => {
     return (
       <>
         <Link href="#about">Home</Link>
-        <Link href="#events">Events</Link>
-        <Link href="#sessions">Sessions</Link>
+        <Link href="#events">Incidents</Link>
+        {/* <Link href="#sessions">Sessions</Link> */}
         <Link href="#letstalk">Contact Us</Link>
       </>
     );
@@ -65,9 +65,9 @@ export default () => {
     return (
       <>
         <Link href="/">Home</Link>
-        <Link href="#admin_event">Events</Link>
+        <Link href="#admin_event">Incidents</Link>
         {/* <Link href="#addsessions">Add Events</Link> */}
-        <Link href="#admin_session">Sessions</Link>
+        {/* <Link href="#admin_session">Sessions</Link> */}
         {/* <Link href="#addsessions">Add Sessions</Link> */}
         {/* <Link href="#userdetails">Team</Link> */}
       </>
@@ -111,7 +111,7 @@ export default () => {
             </SocialLink>
           </SocialLinksContainer>
           <CopyrightText>
-            Made by the team of Rijul Jain, Prateeksha Pal and Harshit Krishna.
+            Made by the team of Palak Sharma, Prateeksha Pal and Shashwat Sharma.
           </CopyrightText>
         </Row>
       </Content>

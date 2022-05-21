@@ -115,6 +115,7 @@ userRouter.post("/adduser", (req, res) => {
       });
   });
 });
+
 userRouter.post("/login", (req, res) => {
   console.log(req.body.token);
   const { token } = req.body;
@@ -127,9 +128,8 @@ userRouter.post("/login", (req, res) => {
 
     // if (user) {
     // const { _id, name, username, email, phone, univ } = req.user;
-    if (
-      user.email.slice(-24, -1) + user.email.slice(-1) ===
-      "@students.iitmandi.ac.in"
+    if (true
+    
       // true
     ) {
       const tokenn = signToken(token);

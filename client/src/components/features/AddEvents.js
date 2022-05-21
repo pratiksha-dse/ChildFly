@@ -76,8 +76,11 @@ const AddEvents = ({
         img:"",
         date: "",
         time: "",
-        reglink: "",
+      
         description: "",
+        contact:"",
+            status:"",
+           
     });
     const [message, setMessage] = useState(null);
     let timerID = useRef(null);
@@ -95,11 +98,14 @@ const AddEvents = ({
     const resetForm = () => {
         setEvent({
             title: "",
-        img: "",
+            img: "",
             date: "",
             time: "",
-            reglink: "",
+          
             description: "",
+            contact:"",
+            status:"Pending",
+          
         });
     };
 
@@ -154,11 +160,11 @@ const AddEvents = ({
             <ContentWithPaddingXl>
                 <Column>
                     <HeaderContent>
-                        <Subheading>ClubNation</Subheading>
-                        <Heading>Add Events</Heading>
+                        <Subheading>ChildFly</Subheading>
+                        <Heading>Add Incidents</Heading>
                         <p align="center">
                             <Description>
-                                Add title, date, time, Registration link, description</Description>
+                                Add place, date, time, description of seen Incident</Description> 
                         </p>
                     </HeaderContent>
                     <br />
@@ -170,7 +176,7 @@ const AddEvents = ({
                             name="title"
                             value={event.title}
                             onChange={onChange}
-                            placeholder="Title"
+                            placeholder="Place"
                         />
                         <Input
                             type="url"
@@ -191,19 +197,28 @@ const AddEvents = ({
                             value={event.time}
                             onChange={onChange}
                             placeholder="Time"
-                        />  <Input
+                        /> 
+                         {/* <Input
                             type="url"
                             name="reglink"
                             value={event.reglink}
                             onChange={onChange}
                             placeholder="Registration link"
+                        /> */}
+                        <Input
+                            type="text"
+                            name="contact"
+                            value={event.contact}
+                            onChange={onChange}
+                            placeholder="Contact No"
                         />
+                  
                         <Input
                             type="text"
                             name="description"
                             value={event.description}
                             onChange={onChange}
-                            placeholder="Description"
+                            placeholder="Description of seen Incident"
                         />
                        
 

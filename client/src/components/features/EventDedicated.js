@@ -90,11 +90,7 @@ export default ({
       : null
     : imageSrc;
 
-  const reglink = (event? event.reglink : null)
-    ? event
-      ? event.reglink
-      : null
-    : null;
+
   const datE = (event ? event.date : null)
     ? event
       ? event.date
@@ -105,6 +101,18 @@ export default ({
       ? event.time
       : null
     : null;
+    const contacT = (event ? event.contact : null)
+    ? event
+      ? event.contact
+      : null
+    : null;  
+    const statuS = (event ? event.status : null)
+    ? event
+      ? event.status
+      : null
+    : null;  
+
+
   console.log(event);
   return (
     <Container>
@@ -127,6 +135,13 @@ export default ({
                   : null
                 : heading}
             </Heading>
+            <Heading>
+              {(event ? event.status : null)
+                ? event
+                  ? event.status
+                  : null
+                : heading}
+            </Heading>
             <Description>
               {" "}
               {(event ? event.description : null)
@@ -144,10 +159,12 @@ export default ({
               </Statistic>
             </Statistics>
             <Statistics>
+       
               <Statistic key={1}>
-                <Key><PrimaryButton as="a" href={reglink} target="_blank">
-              {"Registration Link"}
-            </PrimaryButton></Key>
+                <Key>Contact: {contacT}</Key>
+              </Statistic>
+              <Statistic key={2}>
+                <Key>Status: {statuS}</Key>
               </Statistic>
            
             </Statistics>

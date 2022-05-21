@@ -178,8 +178,8 @@ export default () => {
     <Container>
       <Content>
         <HeaderContent>
-          <Subheading>ClubNation</Subheading>
-          <Heading>Events</Heading>
+          <Subheading>ChildFly</Subheading>
+          <Heading>Incidents</Heading>
         </HeaderContent>
         {searchBar()}
         <TabContent>
@@ -193,11 +193,13 @@ export default () => {
                 <TextInfo>
                   <TitleReviewContainer>
                     <Title>{event.title}</Title>
+                  
                     {/* <RatingsInfo>
                       <StarIcon />
               <Rating>{event.rating}</Rating>
                     </RatingsInfo> */}
                   </TitleReviewContainer>
+                 
                   <SecondaryInfoContainer>
                     <IconWithText>
                       <IconContainer>
@@ -213,20 +215,27 @@ export default () => {
                     </IconWithText>
                   </SecondaryInfoContainer>
                   <SecondaryInfoContainer>
-                    <IconWithText>
+                  <IconWithText>
                       <IconContainer>
-                        <RegIcon />
+                        <TimeIcon />
                       </IconContainer>
-                      <a href={event.reglink} target="_blank">
-                    <Text>Registration Link</Text></a>
+                      <Text>{event.contact}</Text>
                     </IconWithText>
+                  <IconWithText>
+                      <IconContainer>
+                        <DateIcon />
+                      </IconContainer>
+                      <Text>{event.status}</Text>
+                    </IconWithText>
+              
+               
                  
                   </SecondaryInfoContainer>
                   {/* <Description>{event.description}</Description> */}
                 </TextInfo>
                 <a href={isAdmin?("#/admin_event_edit?" + event._id):("#/event?" + event._id)}>
                 {/* <a href={"#/admin_event_edit?"+event._id}> */}
-                    <PrimaryButton>Event Details</PrimaryButton>
+                    <PrimaryButton>Incident Details</PrimaryButton>
                   </a>
               </Card>
               );

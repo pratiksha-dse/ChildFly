@@ -79,8 +79,11 @@ const EventEdit = ({
     img: "",
     date: "",
     time: "",
-    reglink: "",
+   
     description: "",
+    status:"",
+    contact:"",
+ 
   });
   const [message, setMessage] = useState(eventOld);
   let timerID = useRef(eventOld);
@@ -101,8 +104,11 @@ const EventEdit = ({
       img: "",
       date: "",
       time: "",
-      reglink: "",
+
       description: "",
+      contact:"",
+      status:"",
+    
     });
   };
 
@@ -115,8 +121,9 @@ const EventEdit = ({
       img: event.img === "" ? eventOld.img : event.img,
       date: event.date === "" ? eventOld.date : event.date,
       time: event.time === "" ? eventOld.time : event.time,
-      reglink: event.reglink === "" ? eventOld.reglink : event.reglink,
       description: event.description === "" ? eventOld.description : event.description,
+      contact:event.contact===""? eventOld.contact:event.contact,
+      status:event.status===""? eventOld.status:event.status,
     };
 
     EventService.editEvent(newEvent, SEID).then((data) => {
@@ -207,19 +214,27 @@ const EventEdit = ({
               onChange={onChange}
               placeholder="Time"
             />{" "}
-            <Input
-              type="url"
-              name="reglink"
-              value={event.reglink}
-              onChange={onChange}
-              placeholder="Registration link"
-            />
+        
             <Input
               type="text"
               name="description"
               value={event.description}
               onChange={onChange}
               placeholder="Description"
+            />
+              <Input
+              type="text"
+              name="contact"
+              value={event.contact}
+              onChange={onChange}
+              placeholder="Contact No"
+            />
+              <Input
+              type="text"
+              name="status"
+              value={event.status}
+              onChange={onChange}
+              placeholder="Status"
             />
             <p align="right">
               <SubmitButton type="submit">
