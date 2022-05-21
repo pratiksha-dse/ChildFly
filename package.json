@@ -1,5 +1,5 @@
 {
-  "name": "ClubNation",
+  "name": "club-nation",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -25,7 +25,7 @@
     "dotenv": "^16.0.0",
     "express": "^4.17.2",
     "express-session": "^1.17.2",
-    "firebase": "^9.6.3",
+    "firebase": "^9.8.1",
     "google-auth-library": "^7.14.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.13.14",
@@ -38,6 +38,10 @@
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^6.1.0",
     "react-bootstrap": "^2.1.1",
-    "react-phone-number-input": "^3.1.44"
+    "react-phone-number-input": "^3.1.44",
+    "solc": "^0.8.14-fixed",
+    "truffle": "^5.5.15",
+    "typescript": "^4.6.4",
+    "web3": "^1.7.3"
   }
 }
