@@ -83,7 +83,7 @@ const EventEdit = ({
     description: "",
     status:"",
     contact:"",
-    userId:""
+ 
   });
   const [message, setMessage] = useState(eventOld);
   let timerID = useRef(eventOld);
@@ -108,7 +108,7 @@ const EventEdit = ({
       description: "",
       contact:"",
       status:"",
-      userId:""
+    
     });
   };
 

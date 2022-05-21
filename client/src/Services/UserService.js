@@ -1,6 +1,6 @@
 export default {
   addUser: (user) => {
-    console.log("doing1");
+    console.log(user);
     return fetch("/user/adduser", {
       method: "post",
       body: JSON.stringify(user),
