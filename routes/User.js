@@ -115,6 +115,15 @@ userRouter.post("/adduser", (req, res) => {
       });
   });
 });
+function ValidateEmail(mail) 
+{
+ if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myForm.emailAddr.value))
+  {
+    return (true)
+  }
+    alert("You have entered an invalid email address!")
+    return (false)
+}
 userRouter.post("/login", (req, res) => {
   console.log(req.body.token);
   const { token } = req.body;
@@ -127,9 +136,8 @@ userRouter.post("/login", (req, res) => {
 
     // if (user) {
     // const { _id, name, username, email, phone, univ } = req.user;
-    if (
-      user.email.slice(-24, -1) + user.email.slice(-1) ===
-      "@students.iitmandi.ac.in"
+    if (ValidateEmail(user.email)
+    
       // true
     ) {
       const tokenn = signToken(token);

@@ -80,7 +80,7 @@ const AddEvents = ({
         description: "",
         contact:"",
             status:"",
-            userId:""
+           
     });
     const [message, setMessage] = useState(null);
     let timerID = useRef(null);
@@ -105,7 +105,7 @@ const AddEvents = ({
             description: "",
             contact:"",
             status:"",
-            userId:""
+          
         });
     };
 
