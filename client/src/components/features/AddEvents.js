@@ -222,6 +222,7 @@ const AddEvents = ({
                             placeholder="Email"
                         />
                                {/* <Input
+                            {/* <Input
                             type="email"
                             name="email"
                             value={event.email}
