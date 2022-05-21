@@ -1,0 +1,215 @@
+{
+  "contractName": "Bounties",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Bounties.sol\":\"Bounties\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Bounties.sol\":{\"keccak256\":\"0x86da4da2d08961e3a0e50fc921841ac94148c3317d44d297b3b04d7f15042182\",\"urls\":[\"bzz-raw://d7fe1dd9fe13d3fa39a8a362d2066bf06a063e8322e126ca117d6430adf342d9\",\"dweb:/ipfs/QmSnEBwppDoav7ehWpe1NrRcoUAoJhRd3NowCF6xUd2LfB\"]}},\"version\":1}",
+  "bytecode": "0x60806040526001600055348015601457600080fd5b50603e8060226000396000f3fe6080604052600080fdfea265627a7a72315820b0953b970da9b5bd203fb5eb88a3d66d60e367f1c3c900a8aed2f02ef8f1babc64736f6c63430005110032",
+  "deployedBytecode": "0x6080604052600080fdfea265627a7a72315820b0953b970da9b5bd203fb5eb88a3d66d60e367f1c3c900a8aed2f02ef8f1babc64736f6c63430005110032",
+  "sourceMap": "69:42:0:-;;;104:1;93:12;;69:42;8:9:-1;5:2;;;30:1;27;20:12;5:2;69:42:0;;;;;;;",
+  "deployedSourceMap": "69:42:0:-;;;;;",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.4.22 <0.9.0;\r\n\r\ncontract Bounties{\r\n    uint num = 1;\r\n\r\n}",
+  "sourcePath": "C:\\Users\\user\\Desktop\\Nalle-Developers\\blockchain\\contracts\\contracts\\Bounties.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/Bounties.sol",
+    "exportedSymbols": {
+      "Bounties": [
+        5
+      ]
+    },
+    "id": 6,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:32:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 5,
+        "linearizedBaseContracts": [
+          5
+        ],
+        "name": "Bounties",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 4,
+            "name": "num",
+            "nodeType": "VariableDeclaration",
+            "scope": 5,
+            "src": "93:12:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 2,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "93:4:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "31",
+              "id": 3,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "104:1:0",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_1_by_1",
+                "typeString": "int_const 1"
+              },
+              "value": "1"
+            },
+            "visibility": "internal"
+          }
+        ],
+        "scope": 6,
+        "src": "69:42:0"
+      }
+    ],
+    "src": "33:78:0"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/Bounties.sol",
+      "exportedSymbols": {
+        "Bounties": [
+          5
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".22",
+            "<",
+            "0.9",
+            ".0"
+          ]
+        },
+        "id": 1,
+        "name": "PragmaDirective",
+        "src": "33:32:0"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            5
+          ],
+          "name": "Bounties",
+          "scope": 6
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "name": "num",
+              "scope": 5,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256",
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint",
+                  "type": "uint256"
+                },
+                "id": 2,
+                "name": "ElementaryTypeName",
+                "src": "93:4:0"
+              },
+              {
+                "attributes": {
+                  "argumentTypes": null,
+                  "hexvalue": "31",
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "lValueRequested": false,
+                  "subdenomination": null,
+                  "token": "number",
+                  "type": "int_const 1",
+                  "value": "1"
+                },
+                "id": 3,
+                "name": "Literal",
+                "src": "104:1:0"
+              }
+            ],
+            "id": 4,
+            "name": "VariableDeclaration",
+            "src": "93:12:0"
+          }
+        ],
+        "id": 5,
+        "name": "ContractDefinition",
+        "src": "69:42:0"
+      }
+    ],
+    "id": 6,
+    "name": "SourceUnit",
+    "src": "33:78:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.17+commit.d19bba13.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0xeC5964467AF025982385eeCD71eC39A06247e754",
+      "transactionHash": "0xcac5951d7794c52dd3aa062bf290a7e36e2262bbccd122b1c3987061094afc54"
+    }
+  },
+  "schemaVersion": "3.4.7",
+  "updatedAt": "2022-05-21T13:39:24.632Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
