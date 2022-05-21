@@ -20,11 +20,7 @@ const EventSchema = new mongoose.Schema({
         required: true,
         min: 1
     },
-    reglink: {
-        type: String,
-        required: true,
-        min: 1
-    },
+
     description: {
         type: String,
         required: true,

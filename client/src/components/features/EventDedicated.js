@@ -90,11 +90,7 @@ export default ({
       : null
     : imageSrc;
 
-  const reglink = (event? event.reglink : null)
-    ? event
-      ? event.reglink
-      : null
-    : null;
+
   const datE = (event ? event.date : null)
     ? event
       ? event.date
@@ -157,11 +153,7 @@ export default ({
               </Statistic>
             </Statistics>
             <Statistics>
-              <Statistic key={1}>
-                <Key><PrimaryButton as="a" href={reglink} target="_blank">
-              {"Registration Link"}
-            </PrimaryButton></Key>
-              </Statistic>
+       
               <Statistic key={2}>
                 <Key>Contact: {contacT}</Key>
               </Statistic>

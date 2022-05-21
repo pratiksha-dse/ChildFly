@@ -104,7 +104,7 @@ const Navbar = (props) => {
     return (
       <>
         <NavLink href="#about">Home</NavLink>
-        <NavLink href="#admin_event">Events</NavLink>
+        <NavLink href="#admin_event">Incidents</NavLink>
         {/* <NavLink href="#addevents">Add Events</NavLink>*/}
         {/* <NavLink href="#admin_session">Sessions</NavLink> */}
         {/*   <NavLink href="#addsessions">Add Sessions</NavLink>*/}
