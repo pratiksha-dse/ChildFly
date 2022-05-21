@@ -113,7 +113,7 @@ const AddEvents = ({
     const onSubmit = (e) => {
         e.preventDefault();
         const tmpEvents = [...events, event];
-        UserService.getId().then((data)=>{})
+        // UserService.getId().then((data)=>{})
         EventService.postEvent(event).then((data) => {
             const { message } = data;
             setMessage(message);
