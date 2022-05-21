@@ -155,18 +155,12 @@ const Navbar = (props) => {
         authContext.setIsAdmin(isAdmin);
         console.log(Userdetail)
 
-
+        UserService.getUserByemail(user.email).then((data)=>{
+            console.log(data);
+        });
         UserService.addUser({name:user.name,email:user.email}).then((data) => {
           const { msg } = data;
           setMsg(msg);
-          // console.log(Userdetail)
-
-          // if (!msg.msgError) {
-          //   timerID = setTimeout(() => {
-          //     //   props.history.push("/#/add");
-          //   }, 2000);
-          // }
-
         });
         //props.history.push('/todos');
       } else {
