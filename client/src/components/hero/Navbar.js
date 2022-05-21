@@ -47,8 +47,8 @@ const Navbar = (props) => {
     isAdmin,
     setIsAdmin,
   } = useContext(AuthContext);
-  const [message, setMessage] = useState(null);
   const authContext = useContext(AuthContext);
+  const [message, setMessage] = useState(null);
   // console.log("navbar", user);
   const onClickLogoutHandler = () => {
     AuthService.logout().then((data) => {
@@ -67,6 +67,7 @@ const Navbar = (props) => {
       }
     });
   };
+
 
   const unauthenticatedNavBar = () => {
     return (
@@ -124,11 +125,19 @@ const Navbar = (props) => {
       else return authenticatedNavBar();
     }
   };
-  const [User, setuser] = useState({
-    name:"",
-    email:"",
+  const [Userdetail, setUserdetail] = useState({
+    name: "",
+    email: "",
 
-});
+  });
+  const [msg, setMsg] = useState(null);
+  let timerID = useRef(null);
+
+  useEffect(() => {
+    return () => {
+      clearTimeout(timerID);
+    };
+  }, []);
   const handleFailure = (result) => {
     alert("Login failed. Please try again later.");
     console.log(result);
@@ -139,18 +148,26 @@ const Navbar = (props) => {
       const { isAuthenticated, user, message, isAdmin } = data;
       if (isAuthenticated) {
         authContext.setUser(user);
-        setuser({name:user.name,email:user.email})
+        setUserdetail({name:user.name,email:user.email})
+        console.log("debug")
         console.log(user);
         authContext.setIsAuthenticated(isAuthenticated);
         authContext.setIsAdmin(isAdmin);
-        UserService.addUser(User).then((data) => {
-            
-         console.log(User);
-            setTimeout(() => {
-                  //   props.history.push("/#/add");
-              }, 2000);
-        
-      });
+        console.log(Userdetail)
+
+
+        UserService.addUser({name:user.name,email:user.email}).then((data) => {
+          const { msg } = data;
+          setMsg(msg);
+          // console.log(Userdetail)
+
+          // if (!msg.msgError) {
+          //   timerID = setTimeout(() => {
+          //     //   props.history.push("/#/add");
+          //   }, 2000);
+          // }
+
+        });
         //props.history.push('/todos');
       } else {
         alert(message.msgBody);

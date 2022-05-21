@@ -106,6 +106,12 @@ export default ({
       ? event.contact
       : null
     : null;  
+    const statuS = (event ? event.status : null)
+    ? event
+      ? event.status
+      : null
+    : null;  
+
 
   console.log(event);
   return (
@@ -154,8 +160,11 @@ export default ({
             </Statistics>
             <Statistics>
        
-              <Statistic key={2}>
+              <Statistic key={1}>
                 <Key>Contact: {contacT}</Key>
+              </Statistic>
+              <Statistic key={2}>
+                <Key>Status: {statuS}</Key>
               </Statistic>
            
             </Statistics>
