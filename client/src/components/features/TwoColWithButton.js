@@ -74,7 +74,9 @@ export default ({
     </>
   ),
   // description = "CapiBull is a one-stop pro-bono solution to all your hesitations relating to personal finance. We provide the basic personal financial advisory you need to embark on your financial freedom.",
-  description = "An enthusiastic coder? Here is the club for you. It is a club dedicated to programming-related activities. It keeps you updated with all the programming-related activities and competitions. It also organizes several competitions and workshops to increase coding skills. The Association for Computing and Machinery(ACM) Chapter at IIT Mandi organizes various guest lectures and tutorials from time to time.  ",
+  description = "Child labour is indeed a curse to our society and a crime against humanity. Although more prevalent in developing countries, it is definately a universal phenomenon. Thousands of children all over the Western World work in fast food centres, gas stations, newspaper selling, cleaning of cars, in garment and leather factories. They have to grind bricks and stones. They work as street hawkers. Sometimes they become pickpockets as well . They also work as bus conductors or labourers in small factories and polish boots. They even work in houses as male/female servants. In most cases, the masters and house wives are very harsh to them. They do not even regard them as humans.  ",
+  description2 ="Sometimes we want masters apprehended and imprisoned. But many people wonder what they would get if they report for the same? Will the transactions be completely fair even if the government passes a law rewarding individuals who report child labour?",
+  description3= "Don't worry, we have a way for rewarding those who report any actual occurrence of child labour using blockchain. So, Simply report any occurrence involving child labour to earn ether ( A crpytocurrancy ).",
   // primaryButtonText = "Learn More",
   primaryButtonUrl = "https://timerse.com",
   imageSrc = TeamIllustrationSrc,
@@ -109,32 +111,9 @@ export default ({
             <Subheading>{subheading}</Subheading>
             <Heading>{heading}</Heading>
             <Description>{description}</Description>
-            {/* <PrimaryButton
-                buttonRounded={buttonRounded}
-                as="a"
-                href={primaryButtonUrl}
-              >
-                {primaryButtonText}
-              </PrimaryButton> */}
+            <Description>{description2}</Description>
+            <Description>{description3}</Description>
             <SocialLinksContainer>
-              {/* <SocialLink href="https://www.facebook.com/aryan.jain.923" target={"_blank"}>
-                <FacebookIcon />
-              </SocialLink>
-              <SocialLink
-                href="https://www.linkedin.com/in/aryan-jain-445530194"
-                target={"_blank"}
-              >
-                <LinkdInIcon />
-              </SocialLink> */}
-              {/* <SocialLink href="https://twitter.com" target={"_blank"}>
-                <TwitterIcon />
-              </SocialLink> */}
-              {/* <SocialLink
-                href="https://instagram.com/aryanjain.wav?utm_medium=copy_link"
-                target={"_blank"}
-              >
-                <InstagramIcon />
-              </SocialLink> */}
             </SocialLinksContainer>
           </TextContent>
         </TextColumn>
