@@ -155,7 +155,20 @@ userRouter.post("/login", (req, res) => {
   };
   ticket();
 });
-
+userRouter.post("/getuserbyemail", (req, res) => {
+  console.log("Fetching User");
+  User.findOne({email:req.body.email}).exec((err, document) => {
+    if (err) {
+      console.log("User failed to fetch");
+      res.status(500).json({
+        message: { msgBody: "User failed to fetch", msgError: true },
+      });
+    } else {
+      console.log("User fetched successfully");
+      res.status(200).json({ user: document });
+    }
+  });
+});
 userRouter.get(
   "/logout",
   passport.authenticate("jwt", { session: false }),

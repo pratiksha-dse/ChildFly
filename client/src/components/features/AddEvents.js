@@ -79,7 +79,6 @@ const AddEvents = ({
       
         description: "",
         contact:"",
-            status:"",
            
     });
     const [message, setMessage] = useState(null);
@@ -104,7 +103,7 @@ const AddEvents = ({
           
             description: "",
             contact:"",
-            status:"Pending",
+           
           
         });
     };
