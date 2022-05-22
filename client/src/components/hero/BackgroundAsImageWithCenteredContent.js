@@ -45,16 +45,13 @@ export default (props) => {
         <HeroContainer>
           <Navbar />
           <Content>
-            <Heading>
-              Wanna be Rich?
+            <Heading>Want to make money by doing good?
               <br />
             </Heading>
             <Subheading>
               Report any Child Labour incident and earn ethers after verification of complaint by Inspector.
-              <br/>
-              Do you doubt and concern about authenticity ?
-              <br/>
-              Let me tell you that prize will be transfered to you in form of crpytocurrancy.
+              <br/>Do you have concerns about authenticity?
+              <br/>Let me tell you that the award will be transferred to you in the form of the safest transactions, namely cryptocurrency. 
               
               </Subheading>
             <PrimaryAction href="#about">Get Started</PrimaryAction>
@@ -77,7 +74,7 @@ export default (props) => {
         <Subheading>
         Report any Child Labour incident and earn ethers after verification of complaint by Inspector.
         <br/>
-        Add all details for incident and help India to become powerful.
+        Add all incident details to assist India become powerful.
         <br/>
          
         </Subheading>

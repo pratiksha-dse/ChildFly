@@ -230,20 +230,20 @@ export default ({
               <Statistic key={2}>
                 <Key>Status: {statuS}</Key>
               </Statistic>
-           
             </Statistics>
+            
             <Statistics>
               <Statistic key={1}>
                 <Key>Email: {emaiL}</Key>
               </Statistic>
-           
             </Statistics>
+
             <Statistics>
               <Statistic key={1}>
                 <Key>Account Address: {accounT}</Key>
               </Statistic>
-           
             </Statistics>
+
             <Statistics>
             <Statistic key={1}>
             <Key>  <button>
@@ -261,14 +261,10 @@ export default ({
               >
                Reject
               </PrimaryLink>
-            </button></Key>
-            
-            
+            </button></Key>            
               </Statistic>
             </Statistics>
-            
-        
-           
+                      
           </TextContent>
         </TextColumn>
       </TwoColumn>

@@ -77,6 +77,7 @@ const EventEdit = ({
     account:"",
     contact:"",
     email:"",
+    status:"pending"
  
   });
   const [message, setMessage] = useState(eventOld);
@@ -102,6 +103,7 @@ const EventEdit = ({
       contact:"",
       account:"",
       email:"",
+      status:"pending",
     
     });
   };
@@ -117,8 +119,9 @@ const EventEdit = ({
       time: event.time === "" ? eventOld.time : event.time,
       description: event.description === "" ? eventOld.description : event.description,
       contact:event.contact===""? eventOld.contact:event.contact,
-      account:event.account===""? eventOld.status:event.account,
-      email:event.email===""? eventOld.status:event.email,
+      account:event.account===""? eventOld.account:event.account,
+      email:event.email===""? eventOld.email:event.email,
+      status:event.status===""?eventOld.status:event.status,
     };
 
     EventService.editEvent(newEvent, SEID).then((data) => {

@@ -165,7 +165,7 @@ const AddEvents = ({
                 <Column>
                     <HeaderContent>
                         <Subheading>ChildFly</Subheading>
-                        <Heading>Add Incidents</Heading>
+                        <Heading>Report Incident</Heading>
                         <p align="center">
                             <Description>
                                 Add place, date, time, description of seen Incident</Description> 
