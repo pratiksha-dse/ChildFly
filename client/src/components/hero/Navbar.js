@@ -1,12 +1,6 @@
 import React, { useContext, useState, useRef, useEffect } from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
-import { css } from "styled-components/macro"; //eslint-disable-line
-import { ReactComponent as FacebookIcon } from "images/facebook-icon.svg";
-import { ReactComponent as TwitterIcon } from "images/twitter-icon.svg";
-import { ReactComponent as YoutubeIcon } from "images/youtube-icon.svg";
-import { ReactComponent as InstagramIcon } from "images/instagram-icon.svg";
-import { ReactComponent as DiscordIcon } from "images/discord-icon.svg";
 import AuthService from "../../Services/AuthService";
 import { AuthContext } from "../../Context/AuthContext";
 import { GoogleLogin } from "react-google-login";
@@ -73,14 +67,8 @@ const Navbar = (props) => {
     return (
       <>
         <NavLink href="#about">Home</NavLink>
-        {/*NavLink href="#login">Book a Slot</NavLink>
-        <NavLink href="#login">Resources</NavLink>
-        <NavLink href="#letstalk">Basic Stock Market Course</NavLink>*/}
         <NavLink href="#about">About</NavLink>
         <NavLink href="#letstalk">Contact Us</NavLink>
-        {/* <NavLink href="#userdetails">Events</NavLink>
-        <NavLink href="#userdetails">Sessions</NavLink> */}
-        {/* <NavLink href="#login">Login</NavLink> */}
       </>
     );
   };
@@ -97,6 +85,11 @@ const Navbar = (props) => {
         {/* <NavLink onClick={onClickLogoutHandler} href="#">
           Logout
         </NavLink> */}
+      {/* <>
+        <NavLink href="#about">Home</NavLink>
+        <NavLink href="#events">Events</NavLink>
+        <NavLink href="#sessions">Sessions</NavLink>
+        <NavLink href="#letstalk">Contact Us</NavLink> */}
       </>
     );
   };
@@ -113,10 +106,10 @@ const Navbar = (props) => {
         {/* <NavLink onClick={onClickLogoutHandler} href="#">
           Logout
         </NavLink> */}
+        {/* <NavLink href="#admin_event">Incidents</NavLink> */}
       </>
     );
   };
-  // const isAdmin = user ? user.email === "pc@students.iitmandi.ac.in" : false;
 
   const navlinks = () => {
     if (!isAuthenticated) return unauthenticatedNavBar();
@@ -182,29 +175,7 @@ const Navbar = (props) => {
   const navLinks = [
     <NavLinks key={1}> {navlinks()}</NavLinks>,
     <NavLinks key={2}>
-      {/* <SocialLinksContainer> */}
-      {/* <SocialLink href="https://facebook.com" target={"_blank"}>
-          <FacebookIcon />
-        </SocialLink> */}
-      {/* <SocialLink href="https://twitter.com" target={"_blank"}>
-          <TwitterIcon />
-        </SocialLink> */}
-      {/* <SocialLink
-          href="https://www.youtube.com/channel/UCSmPXl_J3u9AmRUyveXptPw/featured"
-          target={"_blank"}
-        >
-          <YoutubeIcon />
-        </SocialLink>
-        <SocialLink
-          href="https://instagram.com/capibulladvisors?utm_medium=copy_link"
-          target={"_blank"}
-        >
-          <InstagramIcon />
-        </SocialLink>
-        <SocialLink href="https://discord.gg/F6r2DYd6Z6"  target={"_blank"}> 
-          <DiscordIcon />
-        </SocialLink>
-      </SocialLinksContainer> */}
+      
       {isAuthenticated ? (
         <button>
           <PrimaryLink onClick={onClickLogoutHandler} href="/#">
