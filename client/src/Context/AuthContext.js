@@ -5,7 +5,7 @@ export const AuthContext = createContext();
 export default ({ children }) => {
     const [user, setUser] = useState(null);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [isAdmin, setIsAdmin] = useState(true);
+    const [isAdmin, setIsAdmin] = useState(false);
     const [isLoaded, setIsLoaded] = useState(true);
 
     useEffect(() => {
@@ -13,7 +13,7 @@ export default ({ children }) => {
             setUser(data.user);
             setIsAuthenticated(data.isAuthenticated);
             setIsLoaded(true);
-
+            setIsAdmin(data.user.email=="b20165@students.iitmandi.ac.in")
           
 
         });

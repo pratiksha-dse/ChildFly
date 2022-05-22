@@ -2,9 +2,10 @@ import React, { useContext, useEffect } from "react";
 import AnimationRevealPage from "helpers/AnimationRevealPage.js";
 import Hero from "components/hero/BackgroundAsImageWithCenteredContent.js";
 
+import AddEvents from "components/features/AddEvents.js";
 import EventDetails from "components/cards/EventDetails.js";
+
 import tw from "twin.macro";
-import MainFeature1 from "components/features/TwoColWithButton.js";
 // import Features from "components/features/VerticalWithAlternateImageAndText.js";
 // import Blog from "components/blogs/ThreeColSimpleWithImage.js";
 // import Testimonial from "components/testimonials/TwoColumnWithImage.js";
@@ -24,17 +25,17 @@ export default () => {
     setIsAdmin,
   } = useContext(AuthContext);
 
-  const adminLP = () => {
+  const userLP = () => {
     return (
       <>
         <AnimationRevealPage>
           <Hero getstarted="#bookaslot" />
-          <div id="admin_events">
+          {/* <div id="incidents">
             <EventDetails />
-          </div>
-          {/* <div id="addevents">
-            <AddEvents />
           </div> */}
+          <div id="addincidents">
+            <AddEvents />
+          </div>
          
         </AnimationRevealPage>
         <Footer />
@@ -42,7 +43,7 @@ export default () => {
     );
   };
   const page = () => {
-    if (isAuthenticated && isAdmin) return adminLP();
+    if (isAuthenticated && !isAdmin) return userLP();
   };
   return <>{page()}</>;
 };

@@ -87,11 +87,10 @@ const Navbar = (props) => {
 
   const authenticatedNavBar = () => {
     return (
-      <>
-        <NavLink href="#about">Home</NavLink>
-        <NavLink href="#events">Events</NavLink>
-        <NavLink href="#sessions">Sessions</NavLink>
-        <NavLink href="#letstalk">Contact Us</NavLink>
+      <>  <NavLink href="#about">Home</NavLink>
+      <NavLink href="#incidents">Incidents</NavLink>
+      <NavLink href="#addincidents">Add Incidents</NavLink>
+      <NavLink href="#letstalk">Contact Us</NavLink>
         {/* <NavLink href="#letstalk">Basic Stock Market Course</NavLink>*/}
         {/*  <NavLink href="#about">About</NavLink>*/}
         {/* <NavLink href="/#/Todos">Todos</NavLink> */}
@@ -105,7 +104,8 @@ const Navbar = (props) => {
     return (
       <>
         <NavLink href="#about">Home</NavLink>
-        <NavLink href="#admin_event">Incidents</NavLink>
+        <NavLink href="#admin_incidents">Incidents</NavLink> 
+      
         {/* <NavLink href="#addevents">Add Events</NavLink>*/}
         {/* <NavLink href="#admin_session">Sessions</NavLink> */}
         {/*   <NavLink href="#addsessions">Add Sessions</NavLink>*/}

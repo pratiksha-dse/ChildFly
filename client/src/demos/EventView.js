@@ -52,9 +52,9 @@ export default (props) => {
           <div id="eventdedicated">
             <EventDedicated event={event} />
           </div>
-          <div id="addresources">
+          {/* <div id="addresources">
             <AddResources SEID={eventID} />
-          </div>
+          </div> */}
           {/* <div id="addresources">
             <ShowResources SEID={eventID} />
           </div> */}
@@ -64,7 +64,7 @@ export default (props) => {
     );
   };
   const page = () => {
-    if (isAuthenticated && !isAdmin) return studentLP();
+    if (isAuthenticated) return studentLP();
   };
   return <>{page()}</>;
 };
