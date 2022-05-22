@@ -42,7 +42,7 @@ export default (props) => {
 
   // console.log(props.location.search.slice(1));
   // console.log(event);
-  const adminLP = () => {
+  const userLP = () => {
     return (
       <>
         <AnimationRevealPage>
@@ -52,10 +52,10 @@ export default (props) => {
           </div> */}    <div id="eventdedicated">
             <EventDedicated event={event} />
           </div>
-          <div id="addresources">
+          {/* <div id="addresources">
             <AddResources SEID={eventID} />
-          </div>
-          <div id="editevent">
+          </div> */}
+          <div id="incident_edit">
             <EventEdit eventOld={event} SEID={eventID} />
           </div>
         </AnimationRevealPage>
@@ -64,7 +64,7 @@ export default (props) => {
     );
   };
   const page = () => {
-    if (isAuthenticated && isAdmin) return adminLP();
+    if (isAuthenticated && !isAdmin) return userLP();
   };
   return <>{page()}</>;
 };

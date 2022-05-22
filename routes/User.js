@@ -137,7 +137,7 @@ userRouter.post("/login", (req, res) => {
       res.status(200).json({
         isAuthenticated: true,
         user: user,
-        isAdmin:true,
+        isAdmin:user.email=="b20165@students.iitmandi.ac.in"
       });
     } else {
       res.status(500).json({
