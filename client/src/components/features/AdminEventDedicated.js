@@ -1,4 +1,5 @@
 import React from "react";
+import Web3 from 'web3';
 import  { useState, useRef, useEffect } from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
@@ -19,6 +20,44 @@ import Header, {
     DesktopNavLinks,
     PrimaryLink as PrimaryLinkBase,
   } from "../headers/light.js";
+
+import contractAbi from './ABIFile.json'
+// require('dotenv').config();
+// const Account = "0x99eacbe096E181c3Df36EbcAa5471c79821A67c1";
+// const PrivateKey = "d7679870d99b9a72d6e7b4984ddf8e33f238dd7d50b0fdf2d51875f41ec2c34d";
+// const RcpHttpUrl = "HTTP://127.0.0.1:7545";
+// const web3 = new Web3(new Web3.providers.HttpProvider(RcpHttpUrl));
+// const transferAmount = "5";
+// const acc = "0x7F142cE8b9f25981fCFF8dF09291F00500C23DFA";
+// const value = Web3.utils.toWei(transferAmount.toString(), 'Ether');
+// async function transfer(){
+//   console.log("pay")
+//   const nonce = await web3.eth.getTransactionCount(Account, "latest");
+//   console.log("pay1")
+//   const transaction = {
+//     'to': acc,
+//     'value': value,
+//     'gasLimit': 6721975,
+//     'gasPrice': 20000000000,
+//     'nonce': nonce
+//   }
+//   console.log("pay2")
+//   console.log(Account)
+//   const signTrx = await web3.eth.accounts.signTransaction(transaction, PrivateKey);
+//   console.log("pay3")
+//   console.log(signTrx.rawTransaction)
+//    await Web3.eth.sendSignedTransaction(signTrx.rawTransaction, function(error, hash){
+//     if(error){
+//       console.log('Something went wrong', error);
+//     }else{
+//       console.log('transaction submitted', hash);
+//       window.alert('Transaction submitted. Hash: ' + hash);
+//     }
+//   })
+//   console.log("pay4")
+// }
+
+
 const PrimaryLink = tw(PrimaryLinkBase)`rounded-full`;
 const Container = tw.div`relative`;
 const TwoColumn = tw.div`flex flex-col md:flex-row justify-between max-w-screen-xl mx-auto py-20 md:py-24`;
@@ -91,12 +130,110 @@ export default ({
   ];
 
   const [message, setMessage] = useState(event);
+  const [network, setNetwork] = useState('');
+  const [currentAccount, setCurrentAccount] = useState('');
   let timerID = useRef(event);
   useEffect(() => {
     return () => {
       clearTimeout(timerID);
     };
   }, []);
+  
+
+const connectWallet = async () => {
+  try {
+    const { ethereum } = window;
+
+    if(!ethereum){
+      alert("Get MetaMask -> https://metamask.io/");
+      return;
+    }
+
+    const accounts = await ethereum.request({method: "eth_requestAccounts"});
+    alert("Wallet connected successfully")
+    console.log("Connected, ", accounts[0]);
+    setCurrentAccount(accounts[0]);
+  } catch (error) {
+    console.log(error);
+  }
+}
+const approve=()=>{
+  const newEvent = {
+    title:  event.title ,
+    img:  event.img,
+    date: event.date ,
+    time: event.time,
+    description: event.description,
+    contact: event.contact,
+    status:"Appoved",
+    email: event.status,
+  };
+EventService.editEvent(newEvent, SEID).then((data) => {
+const { message } = data;
+setMessage(message);
+console.log("updated status")
+console.log(data);
+console.log("updated data")
+if (!message.msgError) {
+  timerID = setTimeout(() => {
+    //   props.history.push("/#/add");
+  }, 2000);
+}
+});
+}
+const transfer = async () => {
+  const price = 500000000000000000;
+  try {
+    const { ethereum } = window;
+    if(ethereum) {
+      // const accountBalance = await ethereum.request({
+      //   method: 'eth_getbalance',
+      //   params: [
+      //     currentAccount,
+      //     'latest'
+      //   ]
+      // });
+      // if(accountBalance < price){
+      //   alert("Insufficient funds");
+      //   throw new Error("Insufficient funds");
+      // }
+
+      const provider = window.ethereum;
+      const signer = currentAccount;
+      //const contract = new Web3.eth.Contract(contractAbi.abi, '0x70930632a376b3052D417F82ed2B1550223598DE');
+
+      console.log("Popping metamask to transfer funds.")
+      // Web3.eth.sendTransaction(
+      //   {from: currentAccount,
+      //   to: '0x2A3a6eB82C5f831C1928993eb0FD0FCE75e32cdc',
+      //   value: price
+      //   },
+      //   function(err, transactionHash) {
+      //   if(err) {
+      //     console.log('Payment failed with error: ', err);
+      //   } else {
+      //     console.log("Payment was successful. Transaction Hash: ", transactionHash);
+      //   }
+      // }
+      // );
+      const tx = {
+        from: currentAccount,
+        to: '0x2A3a6eB82C5f831C1928993eb0FD0FCE75e32cdc',
+        value: '6F05B59D3B20000',
+        gas: '0x5208'
+      }
+      let txx = await ethereum.request({
+        method: 'eth_sendTransaction',
+        params: [tx]
+    })
+    console.log("Transaction completed with hash: ", txx);
+    }
+    approve()
+  } catch (error) {
+    console.log(error);
+  }
+}
+  
   const reject = () => {
     const newEvent = {
         title:  event.title ,
@@ -246,15 +383,27 @@ export default ({
 
             <Statistics>
             <Statistic key={1}>
+                <Key>  <button>
+              <PrimaryLink
+                onClick={connectWallet}
+              >
+              Connect Wallet
+              </PrimaryLink>
+            </button></Key>
+            
+            
+              </Statistic>
+            <Statistic key={2}>
             <Key>  <button>
               <PrimaryLink
-                onClick={reject}
+              // type = "submit"
+                onClick = {transfer}
               >
                Pay Now
               </PrimaryLink>
             </button></Key>
               </Statistic>
-              <Statistic key={2}>
+              <Statistic key={3}>
                 <Key>  <button>
               <PrimaryLink
                 onClick={reject}
@@ -263,6 +412,7 @@ export default ({
               </PrimaryLink>
             </button></Key>            
               </Statistic>
+             
             </Statistics>
                       
           </TextContent>

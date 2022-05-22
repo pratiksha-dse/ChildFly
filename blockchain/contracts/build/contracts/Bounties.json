@@ -149,7 +149,7 @@
   "sourceMap": "69:853:0:-;;;93:29;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;302:10;294:5;;:18;;;;;;;;;;;;;;;;;;335:9;323;:21;;;;69:853;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
   "deployedSourceMap": "69:853:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;93:29;;8:9:-1;5:2;;;30:1;27;20:12;5:2;93:29:0;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;93:29:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;494:227;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;494:227:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;828:91;;8:9:-1;5:2;;;30:1;27;20:12;5:2;828:91:0;;;:::i;:::-;;;;;;;;;;;;;;;;;;;156:24;;8:9:-1;5:2;;;30:1;27;20:12;5:2;156:24:0;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;187:21;;8:9:-1;5:2;;;30:1;27;20:12;5:2;187:21:0;;;:::i;:::-;;;;;;;;;;;;;;;;;;;129:20;;8:9:-1;5:2;;;30:1;27;20:12;5:2;129:20:0;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;727:92;;8:9:-1;5:2;;;30:1;27;20:12;5:2;727:92:0;;;:::i;:::-;;;;;;;;;;;;;;;;;;;93:29;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;494:227::-;587:9;575;;:21;;;;;;;;;;;;;;;;;;607:9;:18;;:23;626:3;607:23;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;607:23:0;662:3;641:6;:17;648:9;641:17;;;;;;;;;;;;;;;;:24;;;;;;;;;;;681:32;686:10;698:9;;;;;;;;;;;709:3;681:32;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;494:227;;:::o;828:91::-;875:4;898:5;;;;;;;;;;;:13;;;891:20;;828:91;:::o;156:24::-;;;;;;;;;;;;;:::o;187:21::-;;;;:::o;129:20::-;;;;;;;;;;;;;:::o;727:92::-;770:4;794:6;:17;801:9;;;;;;;;;;;794:17;;;;;;;;;;;;;;;;787:24;;727:92;:::o",
   "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.4.22 <0.9.0;\r\n\r\ncontract Bounties{\r\n    string public name = \"bounty\";\r\n    address public owner;\r\n    address public recipient;\r\n    uint public admin_amt;\r\n    mapping (address => uint) prizes;\r\n    constructor() payable public {\r\n        owner = msg.sender;\r\n        admin_amt = msg.value;\r\n    }\r\n    modifier isOwner{\r\n        require(msg.sender == owner);\r\n        _;\r\n    }\r\n    event Sent(address _from, address _to, uint amt);\r\n    function givePrize(address payable _receiver, uint amt) public payable{\r\n        recipient = _receiver;\r\n        _receiver.transfer(amt);\r\n        prizes[_receiver] += amt;\r\n        emit Sent(msg.sender, recipient, amt);\r\n    }\r\n    function print_prize() public view returns(uint) {\r\n        return prizes[recipient];\r\n    }   \r\n    function getOwnerBalance() public view returns(uint){\r\n        return owner.balance;\r\n    }\r\n}",
-  "sourcePath": "C:\\Users\\user\\Desktop\\Nalle-Developers\\blockchain\\contracts\\contracts\\Bounties.sol",
+  "sourcePath": "C:\\Users\\user\\Documents\\Nalle-Developers\\blockchain\\contracts\\contracts\\Bounties.sol",
   "ast": {
     "absolutePath": "project:/contracts/Bounties.sol",
     "exportedSymbols": {
@@ -2651,12 +2651,13 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x62463499c177b515613f3E66816DEebb6d178E20",
-      "transactionHash": "0xa7d7397b05887249b06b6fad6cab455254ec7ef1eab6faf43664a9a0e145ee4c"
+      "address": "0x70930632a376b3052D417F82ed2B1550223598DE",
+      "transactionHash": "0x27d3bbbb26921e7344e72d1391a74f6daf0daadb941ab0e350701d55e81f5e08"
     }
   },
   "schemaVersion": "3.4.7",
-  "updatedAt": "2022-05-22T08:22:12.772Z",
+  "updatedAt": "2022-05-22T17:47:31.626Z",
+  "networkType": "ethereum",
   "devdoc": {
     "methods": {}
   },
