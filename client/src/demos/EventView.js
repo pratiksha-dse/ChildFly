@@ -50,7 +50,7 @@ export default (props) => {
             <AddEvents />
           </div> */}
           <div id="eventdedicated">
-            <AdminEventDedicated event={event} />
+            <AdminEventDedicated event={event} SEID={eventID}/>
           </div>
           {/* <div id="addresources">
             <AddResources SEID={eventID} />
