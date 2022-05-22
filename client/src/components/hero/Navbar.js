@@ -131,11 +131,21 @@ const Navbar = (props) => {
 
         UserService.getUserByemail(user.email).then((data)=>{
             console.log(data);
+            if(data.user==null){
+              UserService.addUser({name:user.name,email:user.email}).then((data) => {
+                const { msg } = data;
+                setMsg(msg);
+              });
+            }
+            else{
+              console.log("user already exist")
+            }
         });
-        UserService.addUser({name:user.name,email:user.email}).then((data) => {
-          const { msg } = data;
-          setMsg(msg);
-        });
+        // UserService.addUser({name:user.name,email:user.email}).then((data) => {
+        //   const { msg } = data;
+        //   setMsg(msg);
+        // });
+   
         //props.history.push('/todos');
       } else {
         alert(message.msgBody);
