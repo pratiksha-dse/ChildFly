@@ -2,6 +2,7 @@
 pragma solidity >=0.4.22 <0.9.0;
 
 contract Bounties{
+    string public name = "bounty";
     address public owner;
     address public recipient;
     uint public admin_amt;
@@ -24,4 +25,7 @@ contract Bounties{
     function print_prize() public view returns(uint) {
         return prizes[recipient];
     }   
+    function getOwnerBalance() public view returns(uint){
+        return owner.balance;
+    }
 }
