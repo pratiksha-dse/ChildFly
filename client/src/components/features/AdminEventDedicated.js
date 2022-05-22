@@ -21,7 +21,6 @@ import Header, {
     PrimaryLink as PrimaryLinkBase,
   } from "../headers/light.js";
 
-import contractAbi from './ABIFile.json'
 // require('dotenv').config();
 // const Account = "0x99eacbe096E181c3Df36EbcAa5471c79821A67c1";
 // const PrivateKey = "d7679870d99b9a72d6e7b4984ddf8e33f238dd7d50b0fdf2d51875f41ec2c34d";
