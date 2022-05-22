@@ -3,7 +3,8 @@ const EventSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true,
-        min: 1
+        min: 1,
+        
     },
     img: {
         type: String,
@@ -41,9 +42,14 @@ const EventSchema = new mongoose.Schema({
         required:true,
         min:1
     },
+    status:{
+        type:String,
+        required:true,
+        min:1,
+    },
  
    
-   Eresources: [{ type: mongoose.Schema.Types.ObjectId, ref: "Event" }],
+//    Eresources: [{ type: mongoose.Schema.Types.ObjectId, ref: "Event" }],
 });
 
 module.exports = mongoose.model('Event', EventSchema);

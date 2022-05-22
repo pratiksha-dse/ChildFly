@@ -10,12 +10,6 @@ import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
 import StatsIllustrationSrc from "images/stats-illustration.svg";
 import { ReactComponent as SvgDotPattern } from "images/dot-pattern.svg";
 
-require("dotenv").config({path: './././././env'});
-
-const Account = process.env.REACT_APP_ACCOUNT;
-const PrivateKey = process.env.REACT_APP_PRIVATE_KEY;
-const RcpHttpUrl = process.nextTick.REACT_APP_RPC_HTTP_URL;
-const web3 = new Web3(new Web3.providers.HttpProvider(RcpHttpUrl));
 
 const Container = tw.div`relative`;
 const TwoColumn = tw.div`flex flex-col md:flex-row justify-between max-w-screen-xl mx-auto py-20 md:py-24`;
