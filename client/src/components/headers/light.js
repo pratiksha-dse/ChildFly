@@ -28,8 +28,8 @@ export const NavLink = tw.a`
 
 export const PrimaryLink = tw(NavLink)`
   lg:mx-0
-  px-8 py-3 rounded bg-red-600 text-gray-100
-  hocus:bg-red-800 hocus:text-gray-200 focus:shadow-outline
+  px-8 py-3 rounded bg-primary-600 text-gray-100
+  hocus:bg-primary-800 hocus:text-gray-200 focus:shadow-outline
   border-b-0
 `;
 

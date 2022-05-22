@@ -8,7 +8,7 @@ import { Subheading as SubheadingBase } from "components/misc/Headings.js";
 
 const Container = styled.div`
   ${tw`relative -m-8 bg-center bg-cover h-screen min-h-144`}
-  background-image: url("https://www.humanium.org/en/wp-content/uploads/2020/04/shutterstock_766450453-830x467.jpg");
+  background-image: url("https://t3.ftcdn.net/jpg/02/03/47/78/240_F_203477844_mRvT1yO8raGrHfaxvxZEbTCcZyvyQE43.jpg");
 `;
 
 const OpacityOverlay = tw.div`z-10 absolute inset-0 bg-black opacity-75`;
@@ -24,7 +24,7 @@ const Heading = styled.h1`
 `;
 const Subheading = tw(SubheadingBase)`text-center text-gray-100 px-8 py-3 mt-5 text-lg`;
 
-const PrimaryAction = tw.a`rounded-full px-8 py-3 mt-5 text-sm sm:text-base sm:mt-16 sm:px-8 sm:py-4 bg-gray-100 font-bold shadow transition duration-300 bg-red-400 text-gray-100 hocus:bg-red-800 hocus:text-gray-200 focus:outline-none focus:shadow-outline`;
+const PrimaryAction = tw.a`rounded-full px-8 py-3 mt-5 text-sm sm:text-base sm:mt-16 sm:px-8 sm:py-4 bg-gray-100 font-bold shadow transition duration-300 bg-primary-400 text-gray-100 hocus:bg-primary-800 hocus:text-gray-200 focus:outline-none focus:shadow-outline`;
 
 export default (props) => {
   return (
