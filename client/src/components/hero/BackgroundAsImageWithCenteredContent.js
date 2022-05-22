@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
@@ -26,29 +26,65 @@ const Heading = styled.h1`
 `;
 const Subheading = tw(SubheadingBase)`text-center text-gray-100 px-8 py-3 mt-5 text-lg`;
 
-const PrimaryAction = tw.a`rounded-full px-8 py-3 mt-5 text-sm sm:text-base sm:mt-16 sm:px-8 sm:py-4 bg-gray-100 font-bold shadow transition duration-300 bg-primary-400 text-gray-100 hocus:bg-gray-100 hocus:text-gray-200 focus:outline-none focus:shadow-outline`;
+const PrimaryAction = tw.a`rounded-full px-8 py-3 mt-5 text-sm sm:text-base sm:mt-16 sm:px-8 sm:py-4 bg-gray-100 font-bold shadow transition duration-300 bg-primary-400 text-gray-100 hocus:bg-primary-600 hocus:text-gray-200 focus:outline-none focus:shadow-outline`;
 
 export default (props) => {
-  return (
-    <Container>
-      <OpacityOverlay />
-      <HeroContainer>
-        <Navbar />
-        <Content>
-          <Heading>
-            Wanna be Rich?
-            <br />
-          </Heading>
-          <Subheading>
-            CapiBull is a one-stop pro-bono solution to all your hesitations
-            relating to personal finance.
-            <br />
-            We provide the basic personal financial advisory you need to embark
-            on your financial freedom.
-          </Subheading>
-          <PrimaryAction href={props.getstarted}>Get Started</PrimaryAction>
-        </Content>
-      </HeroContainer>
-    </Container>
-  );
+
+  const {
+    user,
+    setUser,
+    isAuthenticated,
+    setIsAuthenticated,
+    isAdmin,
+    setIsAdmin,
+  } = useContext(AuthContext);
+  if (!isAuthenticated || (isAdmin)) {
+    return (
+      <Container>
+        <OpacityOverlay />
+        <HeroContainer>
+          <Navbar />
+          <Content>
+            <Heading>
+              Wanna be Rich?
+              <br />
+            </Heading>
+            <Subheading>
+              Report any Child Labour incident and earn ethers after verification of complaint by Inspector.
+              <br/>
+              Do you doubt and concern about authenticity ?
+              <br/>
+              Let me tell you that prize will be transfered to you in form of crpytocurrancy.
+              
+              </Subheading>
+            <PrimaryAction href="#about">Get Started</PrimaryAction>
+          </Content>
+        </HeroContainer>
+      </Container>
+    );
+  }
+  else {
+    return (
+      <Container>
+        <OpacityOverlay />
+        <HeroContainer>
+          <Navbar />
+          <Content>
+            <Heading>
+          Welcome!
+          <br />
+        </Heading>
+        <Subheading>
+        Report any Child Labour incident and earn ethers after verification of complaint by Inspector.
+        <br/>
+        Add all details for incident and help India to become powerful.
+        <br/>
+         
+        </Subheading>
+        <PrimaryAction href="#about">Get Started</PrimaryAction>
+          </Content>
+        </HeroContainer>
+      </Container>
+    );
+  }
 };

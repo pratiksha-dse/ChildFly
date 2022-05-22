@@ -46,7 +46,7 @@ const Description = tw.p`mt-4 text-center md:text-left text-sm md:text-base lg:t
 const Statistics = tw.div`flex flex-col items-center sm:block text-center md:text-left mt-4`;
 const Statistic = tw.div`text-left sm:inline-block sm:mr-12 last:mr-0 mt-0`;
 const Value = tw.div`font-bold text-lg sm:text-xl lg:text-2xl text-secondary-500 tracking-wide`;
-const Key = tw.div`font-medium text-primary-700`;
+const Key = tw.div`font-medium text-gray-700`;
 
 const PrimaryButton = tw(
   PrimaryButtonBase
@@ -106,8 +106,23 @@ export default ({
         description: event.description,
         contact: event.contact,
         status:"rejected",
-        email: event.status,
+        email: event.email,
+        account:event.account,
+
       };
+      alert("Rejected")
+      // const pay = () => {
+      //   const newEvent = {
+      //       title:  event.title ,
+      //       img:  event.img,
+      //       date: event.date ,
+      //       time: event.time,
+      //       description: event.description,
+      //       contact: event.contact,
+      //       status:"paid",
+      //       email: event.email,
+    
+      //     };
   EventService.editEvent(newEvent, SEID).then((data) => {
     const { message } = data;
     setMessage(message);
@@ -120,9 +135,6 @@ export default ({
       }, 2000);
     }
   });
-  
-  
-  
   }
 
   
@@ -163,7 +175,12 @@ export default ({
     ? event
       ? event.email
       : null
-    : null;  
+    : null; 
+    const accounT = (event ? event.account : null)
+    ? event
+      ? event.account
+      : null
+    : null;   
 
 
   console.log(event);
@@ -218,6 +235,12 @@ export default ({
             <Statistics>
               <Statistic key={1}>
                 <Key>Email: {emaiL}</Key>
+              </Statistic>
+           
+            </Statistics>
+            <Statistics>
+              <Statistic key={1}>
+                <Key>Account Address: {accounT}</Key>
               </Statistic>
            
             </Statistics>

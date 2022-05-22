@@ -79,7 +79,6 @@ const Navbar = (props) => {
       <NavLink href="#incidents">Incidents</NavLink>
       <NavLink href="#addincidents">Add Incident</NavLink>
       <NavLink href="#letstalk">Contact Us</NavLink>
-
       </>
     );
   };
@@ -88,8 +87,6 @@ const Navbar = (props) => {
       <>
         <NavLink href="#about">Home</NavLink>
         <NavLink href="#admin_incidents">Incidents</NavLink> 
-      
-
       </>
     );
   };
