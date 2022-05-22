@@ -76,7 +76,6 @@ const AddEvents = ({
         img:"",
         date: "",
         time: "",
-      
         description: "",
         contact:"",
         email:"",
@@ -102,7 +101,6 @@ const AddEvents = ({
             img: "",
             date: "",
             time: "",
-          
             description: "",
             contact:"",
             email:"",

@@ -29,7 +29,7 @@ export default () => {
       <>
         <AnimationRevealPage>
           <Hero getstarted="#bookaslot" />
-          <div id="admin_events">
+          <div id="admin_incidents">
             <EventDetails />
           </div>
           {/* <div id="addevents">
