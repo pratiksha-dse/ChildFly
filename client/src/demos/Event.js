@@ -4,6 +4,7 @@ import Hero from "components/hero/BackgroundAsImageWithCenteredContent.js";
 
 import AddEvents from "components/features/AddEvents.js";
 import EventDetails from "components/cards/EventDetails.js";
+import UserEventDetails from "components/cards/UserEventDetails.js";
 
 import tw from "twin.macro";
 // import Features from "components/features/VerticalWithAlternateImageAndText.js";
@@ -24,26 +25,40 @@ export default () => {
     isAdmin,
     setIsAdmin,
   } = useContext(AuthContext);
+  // console.log(isAdmin, user)
 
   const userLP = () => {
-    return (
-      <>
-        <AnimationRevealPage>
-          <Hero getstarted="#bookaslot" />
-          <div id="incidents">
-            <EventDetails />
-          </div>
-          {/* <div id="addincidents">
-            <AddEvents />
-          </div>
-          */}
-        </AnimationRevealPage>
-        <Footer />
-      </>
-    );
-  };
-  const page = () => {
-    if (isAuthenticated && !isAdmin) return userLP();
-  };
-  return <>{page()}</>;
+    if (isAdmin) {
+      return (
+        <>
+          <AnimationRevealPage>
+            <Hero getstarted="#bookaslot" />
+            <div id="incidents">
+              <EventDetails />
+            </div>
+
+          </AnimationRevealPage>
+          <Footer />
+        </>
+      );
+    }
+    else {
+      return (
+        <>
+          <AnimationRevealPage>
+            <Hero getstarted="#bookaslot" />
+            <div id="incidents">
+              <UserEventDetails />
+            </div>
+
+          </AnimationRevealPage>
+          <Footer />
+        </>
+      );
+  }
+};
+const page = () => {
+  if (isAuthenticated && !isAdmin) return userLP();
+};
+return <>{page()}</>;
 };
