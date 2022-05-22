@@ -116,6 +116,11 @@ export default ({
       ? event.email
       : null
     : null;  
+    const accounT = (event ? event.account : null)
+    ? event
+      ? event.account
+      : null
+    : null; 
 
 
   console.log(event);
@@ -176,6 +181,12 @@ export default ({
             <Statistics>
               <Statistic key={1}>
                 <Key>Email: {emaiL}</Key>
+              </Statistic>
+           
+            </Statistics>
+            <Statistics>
+              <Statistic key={1}>
+                <Key>Account: {accounT}</Key>
               </Statistic>
            
             </Statistics>

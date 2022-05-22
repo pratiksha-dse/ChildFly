@@ -80,6 +80,7 @@ const AddEvents = ({
         description: "",
         contact:"",
         email:"",
+        account:"",
            
     });
     const [message, setMessage] = useState(null);
@@ -105,6 +106,7 @@ const AddEvents = ({
             description: "",
             contact:"",
             email:"",
+            account:"",
            
           
         });
@@ -114,6 +116,8 @@ const AddEvents = ({
         e.preventDefault();
         const tmpEvents = [...events, event];
         // UserService.getId().then((data)=>{})
+        console.log(event)
+
         EventService.postEvent(event).then((data) => {
             const { message } = data;
             setMessage(message);
@@ -220,6 +224,13 @@ const AddEvents = ({
                             value={event.email}
                             onChange={onChange}
                             placeholder="Email"
+                        />
+                        <Input
+                            type="text"
+                            name="account"
+                            value={event.account}
+                            onChange={onChange}
+                            placeholder="Account Address"
                         />
                                {/* <Input
                             {/* <Input
