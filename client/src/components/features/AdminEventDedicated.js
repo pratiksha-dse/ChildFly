@@ -166,7 +166,7 @@ const approve=()=>{
     description: event.description,
     contact: event.contact,
     status:"Appoved",
-    email: event.status,
+    email: event.email,
   };
 EventService.editEvent(newEvent, SEID).then((data) => {
 const { message } = data;
@@ -186,36 +186,13 @@ const transfer = async () => {
   try {
     const { ethereum } = window;
     if(ethereum) {
-      // const accountBalance = await ethereum.request({
-      //   method: 'eth_getbalance',
-      //   params: [
-      //     currentAccount,
-      //     'latest'
-      //   ]
-      // });
-      // if(accountBalance < price){
-      //   alert("Insufficient funds");
-      //   throw new Error("Insufficient funds");
-      // }
+   
 
       const provider = window.ethereum;
       const signer = currentAccount;
-      //const contract = new Web3.eth.Contract(contractAbi.abi, '0x70930632a376b3052D417F82ed2B1550223598DE');
 
       console.log("Popping metamask to transfer funds.")
-      // Web3.eth.sendTransaction(
-      //   {from: currentAccount,
-      //   to: '0x2A3a6eB82C5f831C1928993eb0FD0FCE75e32cdc',
-      //   value: price
-      //   },
-      //   function(err, transactionHash) {
-      //   if(err) {
-      //     console.log('Payment failed with error: ', err);
-      //   } else {
-      //     console.log("Payment was successful. Transaction Hash: ", transactionHash);
-      //   }
-      // }
-      // );
+    
       const tx = {
         from: currentAccount,
         to: '0x2A3a6eB82C5f831C1928993eb0FD0FCE75e32cdc',
