@@ -27,7 +27,7 @@ const Image = styled.div((props) => [
   `background-image: url("${props.imageSrc}");`,
   tw`rounded bg-contain bg-no-repeat bg-center h-full rounded sm:rounded-none sm:rounded-tl-2xl sm:rounded-tr-2xl sm:rounded-bl-2xl sm:rounded-br-2xl`,
 ]);
-const TextContent = tw.div`lg:py-8 text-center md:text-left`;
+const TextContent = tw.div` text-primary-800 lg:py-8 text-center md:text-left`;
 
 const Subheading = tw(SubheadingBase)`text-center md:text-left`;
 const Heading = tw(
@@ -38,7 +38,7 @@ const Description = tw.p`mt-4 text-center md:text-left text-sm md:text-base lg:t
 const Statistics = tw.div`flex flex-col items-center sm:block text-center md:text-left mt-4`;
 const Statistic = tw.div`text-left sm:inline-block sm:mr-12 last:mr-0 mt-0`;
 const Value = tw.div`font-bold text-lg sm:text-xl lg:text-2xl text-secondary-500 tracking-wide`;
-const Key = tw.div`font-medium text-primary-700`;
+const Key = tw.div`font-medium text-gray-700`;
 
 const PrimaryButton = tw(
   PrimaryButtonBase
@@ -103,26 +103,26 @@ export default ({
       ? event.time
       : null
     : null;
-    const contacT = (event ? event.contact : null)
+  const contacT = (event ? event.contact : null)
     ? event
       ? event.contact
       : null
-    : null;  
-    const statuS = (event ? event.status : null)
+    : null;
+  const statuS = (event ? event.status : null)
     ? event
       ? event.status
       : null
-    : null;  
-    const emaiL = (event ? event.email : null)
+    : null;
+  const emaiL = (event ? event.email : null)
     ? event
       ? event.email
       : null
-    : null;  
-    const accounT = (event ? event.account : null)
+    : null;
+  const accounT = (event ? event.account : null)
     ? event
       ? event.account
       : null
-    : null; 
+    : null;
 
 
   console.log(event);
@@ -147,13 +147,7 @@ export default ({
                   : null
                 : heading}
             </Heading>
-            <Heading>
-              {(event ? event.status : null)
-                ? event
-                  ? event.status
-                  : null
-                : heading}
-            </Heading>
+            
             <Description>
               {" "}
               {(event ? event.description : null)
@@ -171,40 +165,32 @@ export default ({
               </Statistic>
             </Statistics>
             <Statistics>
-       
+
               <Statistic key={1}>
                 <Key>Contact: {contacT}</Key>
               </Statistic>
-              <Statistic key={2}>
+              {/* <Statistic key={2}>
                 <Key>Status: {statuS}</Key>
-              </Statistic>
-           
+              </Statistic> */}
+
             </Statistics>
             <Statistics>
               <Statistic key={1}>
                 <Key>Email: {emaiL}</Key>
               </Statistic>
-           
             </Statistics>
             <Statistics>
-            <Statistic key={1}>
-                <Key><PrimaryButton as="a" href={"www.google.com"} target="_blank">
-              {"Status"}
-            </PrimaryButton></Key>
-            
-           
-            
-            
-            
+              <Statistic key={1}>
+                <Key>Account Address: {accounT}</Key>
               </Statistic>
             </Statistics>
-            
+            <Statistics>
               <Statistic key={1}>
-                <Key>Account: {accounT}</Key>
+                <Key><PrimaryButton as="a" href={"www.google.com"} target="_blank">
+                  {statuS}
+                </PrimaryButton></Key>
               </Statistic>
-           
-         
-           
+            </Statistics>
           </TextContent>
         </TextColumn>
       </TwoColumn>

@@ -20,7 +20,7 @@ export const NavLinks = tw.div`inline-block`;
 /* hocus: stands for "on hover or focus"
  * hocus:bg-primary-700 will apply the bg-primary-700 class on hover or focus
  */
-export const NavLink = tw.a`
+export const NavLink = tw.a` 
   text-lg my-2 lg:text-sm lg:mx-6 lg:my-0
   font-semibold tracking-wide transition duration-300
   pb-1 border-b-2 border-transparent hover:border-white hocus:text-black
@@ -28,16 +28,16 @@ export const NavLink = tw.a`
 
 export const PrimaryLink = tw(NavLink)`
   lg:mx-0
-  px-8 py-3 rounded bg-primary-600 text-gray-100
+  px-8 py-3 rounded-full bg-primary-600 text-gray-100
   hocus:bg-primary-800 hocus:text-gray-200 focus:shadow-outline
   border-b-0
 `;
 
 export const LogoLink = styled(NavLink)`
-  ${tw`flex items-center font-black border-b-0 text-2xl! ml-0!`};
+  ${tw` flex items-center font-black border-b-0 text-2xl! ml-0!`};
 
   img {
-    ${tw`w-40 mr-3 pl-6`}
+    ${tw` rounded-full w-40 mr-3 pl-6`}
   }
 `;
 

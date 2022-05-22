@@ -240,7 +240,6 @@ const AddEvents = ({
                             placeholder="Description of seen Incident"
                         />
             
-
                         <p align="right">
                             <SubmitButton type="submit">
                                 <SignUpIcon className="icon" />

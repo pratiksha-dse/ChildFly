@@ -65,12 +65,6 @@ const DecoratorBlob2 = styled(SvgDecoratorBlob2)`
 `;
 
 const EventEdit = ({
-  subheading = "Event Management",
-  heading = "Description and Resources",
-  description = "Here are some resources and tools which will help you to manage and understand your finances easily.",
-
-  primaryButtonText = "Learn More",
-  primaryButtonUrl = "https://timerse.com",
   SEID = "",
   eventOld={}
 }) => {
@@ -78,10 +72,9 @@ const EventEdit = ({
     title: "",
     img: "",
     date: "",
-    time: "",
-   
+    time: "",   
     description: "",
-    status:"",
+    account:"",
     contact:"",
     email:"",
  
@@ -105,10 +98,9 @@ const EventEdit = ({
       img: "",
       date: "",
       time: "",
-
       description: "",
       contact:"",
-      status:"",
+      account:"",
       email:"",
     
     });
@@ -125,8 +117,8 @@ const EventEdit = ({
       time: event.time === "" ? eventOld.time : event.time,
       description: event.description === "" ? eventOld.description : event.description,
       contact:event.contact===""? eventOld.contact:event.contact,
-      status:event.status===""? eventOld.status:event.status,
-      status:event.email===""? eventOld.status:event.email,
+      account:event.account===""? eventOld.status:event.account,
+      email:event.email===""? eventOld.status:event.email,
     };
 
     EventService.editEvent(newEvent, SEID).then((data) => {
@@ -141,13 +133,6 @@ const EventEdit = ({
     });
     setEvent(tmpEvents);
   };
-  // const inputRef = useRef();
-  // useEffect(() => {
-  //     EventService.getEvents().then((data) => {
-  //         setEvent(data.events);
-  //         console.log(event);
-  //     });
-  // }, [inputRef]);
 
   function removeItemOnce(arr, value) {
     var index = arr.indexOf(value);
@@ -181,7 +166,7 @@ const EventEdit = ({
             <Heading>Update Incident</Heading>
             <p align="center">
               <Description>
-                Update title, date, time, registration link, description
+                Update title, date, time, Contact, description, Mail Id or Account Address for transactions 
               </Description>
             </p>
           </HeaderContent>
@@ -194,7 +179,7 @@ const EventEdit = ({
               name="title"
               value={event.title}
               onChange={onChange}
-              placeholder="Title"
+              placeholder="Place"
             />
             <Input
               type="url"
@@ -217,14 +202,6 @@ const EventEdit = ({
               onChange={onChange}
               placeholder="Time"
             />{" "}
-        
-            <Input
-              type="text"
-              name="description"
-              value={event.description}
-              onChange={onChange}
-              placeholder="Description"
-            />
               <Input
               type="text"
               name="contact"
@@ -232,20 +209,28 @@ const EventEdit = ({
               onChange={onChange}
               placeholder="Contact No"
             />
-              <Input
-              type="text"
-              name="status"
-              value={event.status}
-              onChange={onChange}
-              placeholder="Status"
-            />
-              <Input
+             <Input
               type="text"
               name="email"
               value={event.email}
               onChange={onChange}
               placeholder="Email"
             />
+              <Input
+              type="text"
+              name="account"
+              value={event.account}
+              onChange={onChange}
+              placeholder="Account Address"
+            />
+            <Input
+              type="text"
+              name="description"
+              value={event.description}
+              onChange={onChange}
+              placeholder="Description of seen Incident"
+            />
+             
             <p align="right">
               <SubmitButton type="submit">
                 <SignUpIcon className="icon" />
