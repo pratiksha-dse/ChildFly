@@ -17,13 +17,13 @@ import Header, {
 const StyledHeader = styled(Header)`
   ${tw`pt-8 max-w-none w-full`}
   ${DesktopNavLinks} ${NavLink}, ${LogoLink} {
-    ${tw`text-gray-100 hover:border-gray-300 hover:text-gray-300`}
+    ${tw`text-gray-100 hover:border-gray-300 `}
   }
   ${NavToggle}.closed {
-    ${tw`text-gray-100 hover:text-primary-500`}
+    ${tw`text-gray-100 hover:text-gray-500`}
   }
 `;
-const PrimaryLink = tw(PrimaryLinkBase)`rounded-full`;
+const PrimaryLink = tw(PrimaryLinkBase)`rounded-full `;
 const SocialLinksContainer = tw.div`mt-4 text-center lg:text-left`;
 const SocialLink = styled.a`
   ${tw`cursor-pointer inline-block p-2 rounded-full bg-gray-100 text-gray-900 hover:bg-gray-500 transition duration-300 mr-4 last:mr-0`}

@@ -33,7 +33,7 @@ export default () => {
         <>
           <AnimationRevealPage>
             <Hero getstarted="#bookaslot" />
-            <div id="incidents">
+            <div id="admin_incidents">
               <EventDetails />
             </div>
 
