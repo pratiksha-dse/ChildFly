@@ -12,6 +12,8 @@ import Event from "demos/Event";
 import AdminEvent from "demos/AdminEvent";
 import EventEdit from "demos/EventEdit";
 import AddEvent from "demos/AddEvent";
+// import YourEvents from "demos/YourEvents";
+
 
 export default function App() {
 
@@ -23,7 +25,7 @@ export default function App() {
         <UserRoute exact path="/incidents" component={Event} />
         <UserRoute path="/incident_edit" component={EventEdit} />
         <UserRoute path="/addincidents" component={AddEvent} />
-        {/* <UserRoute path="/admin_incident" component={EventEdit} /> */}
+        {/* <UserRoute path="/your_incidents" component={YourEvents} /> */}
 
         <AdminRoute exact path="/admin_incidents" component={AdminEvent} />
         <AdminRoute path="/admin_incident" component={EventView} />

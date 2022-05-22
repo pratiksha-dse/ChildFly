@@ -182,11 +182,14 @@ export default ({
             <Statistics>
             <Statistic key={1}>
                 <Key><PrimaryButton as="a" href={"www.google.com"} target="_blank">
-              {"Status"}
+              {"Pay Now"}
             </PrimaryButton></Key>
             
-           
-            
+              </Statistic>
+              <Statistic key={2}>
+                <Key><PrimaryButton as="a" href={"www.google.com"} target="_blank">
+              {"Reject"}
+            </PrimaryButton></Key>
             
             
               </Statistic>

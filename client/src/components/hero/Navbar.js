@@ -77,19 +77,10 @@ const Navbar = (props) => {
     return (
       <>  <NavLink href="#about">Home</NavLink>
       <NavLink href="#incidents">Incidents</NavLink>
-      <NavLink href="#addincidents">Add Incidents</NavLink>
+      <NavLink href="#addincidents">Add Incident</NavLink>
+      {/* <NavLink href="#your_incidents">Your's reported Incidents</NavLink> */}
       <NavLink href="#letstalk">Contact Us</NavLink>
-        {/* <NavLink href="#letstalk">Basic Stock Market Course</NavLink>*/}
-        {/*  <NavLink href="#about">About</NavLink>*/}
-        {/* <NavLink href="/#/Todos">Todos</NavLink> */}
-        {/* <NavLink onClick={onClickLogoutHandler} href="#">
-          Logout
-        </NavLink> */}
-      {/* <>
-        <NavLink href="#about">Home</NavLink>
-        <NavLink href="#events">Events</NavLink>
-        <NavLink href="#sessions">Sessions</NavLink>
-        <NavLink href="#letstalk">Contact Us</NavLink> */}
+
       </>
     );
   };
@@ -99,14 +90,7 @@ const Navbar = (props) => {
         <NavLink href="#about">Home</NavLink>
         <NavLink href="#admin_incidents">Incidents</NavLink> 
       
-        {/* <NavLink href="#addevents">Add Events</NavLink>*/}
-        {/* <NavLink href="#admin_session">Sessions</NavLink> */}
-        {/*   <NavLink href="#addsessions">Add Sessions</NavLink>*/}
-        {/* <NavLink href="#userdetails">Team</NavLink> */}
-        {/* <NavLink onClick={onClickLogoutHandler} href="#">
-          Logout
-        </NavLink> */}
-        {/* <NavLink href="#admin_event">Incidents</NavLink> */}
+
       </>
     );
   };

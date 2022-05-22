@@ -14,7 +14,7 @@ import MainFeature1 from "components/features/TwoColWithButton.js";
 // import ContactUsForm from "components/forms/SimpleContactUs.js";
 import Footer from "components/footers/MiniCenteredFooter.js";
 import { AuthContext } from "../Context/AuthContext";
-import EventDedicated from "components/features/EventDedicated";
+import AdminEventDedicated from "components/features/AdminEventDedicated";
 
 const Subheading = tw.span`uppercase tracking-wider text-sm`;
 
@@ -50,7 +50,7 @@ export default (props) => {
             <AddEvents />
           </div> */}
           <div id="eventdedicated">
-            <EventDedicated event={event} />
+            <AdminEventDedicated event={event} />
           </div>
           {/* <div id="addresources">
             <AddResources SEID={eventID} />
