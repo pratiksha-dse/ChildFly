@@ -13,7 +13,7 @@ export default ({ children }) => {
             setUser(data.user);
             setIsAuthenticated(data.isAuthenticated);
             setIsLoaded(true);
-            setIsAdmin(data.user.email=="b20319@students.iitmandi.ac.in")
+            setIsAdmin(data.user.email=="childfly01@gmail.com")
         });
     }, []);
 
