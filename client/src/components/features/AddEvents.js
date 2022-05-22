@@ -232,15 +232,6 @@ const AddEvents = ({
                             onChange={onChange}
                             placeholder="Account Address"
                         />
-                               {/* <Input
-                            {/* <Input
-                            type="email"
-                            name="email"
-                            value={event.email}
-                            onChange={onChange}
-                            placeholder="Email"
-                        /> */}
-                  
                         <Input
                             type="text"
                             name="description"
@@ -248,8 +239,7 @@ const AddEvents = ({
                             onChange={onChange}
                             placeholder="Description of seen Incident"
                         />
-                       
-
+            
 
                         <p align="right">
                             <SubmitButton type="submit">
