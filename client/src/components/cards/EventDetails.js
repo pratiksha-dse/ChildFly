@@ -113,9 +113,17 @@ const PrimaryButton = tw(
 
 export default () => {
   // useState is used instead of useRef below because we want to re-render when sliderRef becomes available (not null)
-  const [query, setQuery] = useState("");
-  const onChange = (e) => {
-    setQuery(e.target.value);
+  const [query1, setQuery1] = useState("");
+  const onChange1 = (e) => {
+    setQuery1(e.target.value);
+  };
+  const [query2, setQuery2] = useState("");
+  const onChange2 = (e) => {
+    setQuery2(e.target.value);
+  };
+  const [query3, setQuery3] = useState("");
+  const onChange3 = (e) => {
+    setQuery2(e.target.value);
   };
   const {
     user,
@@ -159,19 +167,52 @@ export default () => {
     e.preventDefault();
     // alert("Chal gya");
   };
-  const searchBar = () => {
+  const searchByPlace = () => {
     return (
       <FormContainer>
         <Form onSubmit={onSubmit}>
           <Input
             type="search"
             name="search"
-            onChange={onChange}
-            value={query}
-            placeholder="Search Name"
+            onChange={onChange1}
+            value={query1}
+            placeholder="Search by Place"
           />
         </Form>
       </FormContainer>
+      
+    );
+  };
+ const searchByStatus = () => {
+    return (
+      <FormContainer>
+        <Form onSubmit={onSubmit}>
+          <Input
+            type="search"
+            name="searchbystatus"
+            onChange={onChange2}
+            value={query2}
+            placeholder="Search by Status"
+          />
+        </Form>
+      </FormContainer>
+      
+    );
+  };
+  const searchByEmail = () => {
+    return (
+      <FormContainer>
+        <Form onSubmit={onSubmit}>
+          <Input
+            type="search"
+            name="searchbyemail"
+            onChange={onChange3}
+            value={query3}
+            placeholder="Search by Email"
+          />
+        </Form>
+      </FormContainer>
+      
     );
   };
   return (
@@ -181,12 +222,15 @@ export default () => {
           <Subheading>ChildFly</Subheading>
           <Heading>Incidents</Heading>
         </HeaderContent>
-        {searchBar()}
+        {/* {searchBar()} */}
+        {searchByPlace()}
+        {searchByStatus()}
+        {searchByEmail()}
         <TabContent>
           <DecoratorBlob1 />
           <DecoratorBlob2 />
            {events.map((event, index)=> {
-            if (event.title.match(query)) {
+            if (event.title.match(query1)|| event.status.match(query2)||event.email.match(query3)) {
               return (
                 <Card key={index}>
            <CardImage imageSrc={event.img} />
