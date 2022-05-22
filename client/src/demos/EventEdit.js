@@ -42,7 +42,7 @@ export default (props) => {
 
   // console.log(props.location.search.slice(1));
   // console.log(event);
-  const adminLP = () => {
+  const userLP = () => {
     return (
       <>
         <AnimationRevealPage>
@@ -64,7 +64,7 @@ export default (props) => {
     );
   };
   const page = () => {
-    if (isAuthenticated && isAdmin) return adminLP();
+    if (isAuthenticated && !isAdmin) return userLP();
   };
   return <>{page()}</>;
 };

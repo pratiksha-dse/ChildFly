@@ -178,7 +178,7 @@ const EventEdit = ({
         <Column>
           <HeaderContent>
             {/* <Subheading>ClubNation</Subheading> */}
-            <Heading>Update Event</Heading>
+            <Heading>Update Incident</Heading>
             <p align="center">
               <Description>
                 Update title, date, time, registration link, description

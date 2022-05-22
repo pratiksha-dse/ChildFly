@@ -38,7 +38,7 @@ export default (props) => {
 
   console.log(eventID);
   console.log(event);
-  const studentLP = () => {
+  const adminLP = () => {
     return (
       <>
         <AnimationRevealPage>
@@ -64,7 +64,7 @@ export default (props) => {
     );
   };
   const page = () => {
-    if (isAuthenticated) return studentLP();
+    if (isAuthenticated && isAdmin) return adminLP();
   };
   return <>{page()}</>;
 };

@@ -23,6 +23,7 @@ export default function App() {
         <UserRoute exact path="/incidents" component={Event} />
         <UserRoute path="/incident_edit" component={EventEdit} />
         <UserRoute path="/addincidents" component={AddEvent} />
+        {/* <UserRoute path="/admin_incident" component={EventEdit} /> */}
 
         <AdminRoute exact path="/admin_incidents" component={AdminEvent} />
         <AdminRoute path="/admin_incident" component={EventView} />
