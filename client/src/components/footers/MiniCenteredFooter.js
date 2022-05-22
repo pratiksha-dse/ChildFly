@@ -1,14 +1,15 @@
 import React, { useContext } from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
+import AuthService from "../../Services/AuthService";
+import { AuthContext } from "../../Context/AuthContext";
+import { GoogleLogin } from "react-google-login";
+import UserService from "../../Services/UserService";
 import { Container as ContainerBase } from "components/misc/Layouts.js";
 import logo from "../../images/logo.png";
 import { ReactComponent as FacebookIcon } from "../../images/facebook-icon.svg";
 import { ReactComponent as TwitterIcon } from "../../images/twitter-icon.svg";
-import { ReactComponent as YoutubeIcon } from "../../images/youtube-icon.svg";
 import { ReactComponent as InstagramIcon } from "../../images/instagram-logo.svg";
-import { ReactComponent as DiscordIcon } from "images/discord-icon-footer.svg";
-import { AuthContext } from "../../Context/AuthContext";
 
 const Container = tw(ContainerBase)`bg-gray-900 text-gray-100`;
 const Content = tw.div`max-w-screen-xl mx-auto py-20 lg:py-24`;
@@ -55,21 +56,17 @@ export default () => {
     return (
       <>
         <Link href="#about">Home</Link>
-        <Link href="#events">Incidents</Link>
-        {/* <Link href="#sessions">Sessions</Link> */}
+        <Link href="#incidents">Incidents</Link>
+        <Link href="#addincidents">Add Incidents</Link>
         <Link href="#letstalk">Contact Us</Link>
       </>
     );
-  };
+  }; 
   const adminFooter = () => {
     return (
       <>
         <Link href="/">Home</Link>
-        <Link href="#admin_event">Incidents</Link>
-        {/* <Link href="#addsessions">Add Events</Link> */}
-        {/* <Link href="#admin_session">Sessions</Link> */}
-        {/* <Link href="#addsessions">Add Sessions</Link> */}
-        {/* <Link href="#userdetails">Team</Link> */}
+        <Link href="#admin_incidents">Incidents</Link>
       </>
     );
   };

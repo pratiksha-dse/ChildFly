@@ -36,7 +36,7 @@ const TabContent = tw(
 )`grid grid-cols-1 gap-3 lg:grid-cols-2 grid-flow-row mt-6 rounded-b mx-auto sm:max-w-none sm:mx-0 items-center`;
 const FormContainer = tw.div`w-full mt-8`;
 const Form = tw.form`mx-auto max-w-xs`;
-const Input = tw.input`w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5 first:mt-0`;
+const Input = tw.input`w-full px-4 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5 first:mt-0`;
 const SubmitButton = styled.button`
   ${tw`mt-5 tracking-wide font-semibold bg-primary-500 text-gray-100 w-full py-4 rounded-lg hover:bg-primary-900 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none`}
   .icon {
@@ -117,10 +117,10 @@ export default () => {
   const onChange1 = (e) => {
     setQuery1(e.target.value);
   };
-  // const [query2, setQuery2] = useState("");
-  // const onChange2 = (e) => {
-  //   setQuery2(e.target.value);
-  // };
+  const [query2, setQuery2] = useState("");
+  const onChange2 = (e) => {
+    setQuery2(e.target.value);
+  };
  
   const {
     user,
@@ -181,38 +181,23 @@ export default () => {
       
     );
   };
-//  const searchByStatus = () => {
-//     return (
-//       <FormContainer>
-//         <Form onSubmit={onSubmit}>
-//           <Input
-//             type="search"
-//             name="searchbystatus"
-//             onChange={onChange2}
-//             value={query2}
-//             placeholder="Search by Status"
-//           />
-//         </Form>
-//       </FormContainer>
-      
-//     );
-//   };
-  const searchByEmail = () => {
+ const searchByStatus = () => {
     return (
-      // <FormContainer>
-        {/* <Form onSubmit={onSubmit}>
+      <FormContainer>
+        <Form onSubmit={onSubmit}>
           <Input
             type="search"
-            name="searchbyemail"
-            onChange={onChange3}
-            value={query3}
-            placeholder="Search by Email"
+            name="searchbystatus"
+            onChange={onChange2}
+            value={query2}
+            placeholder="Search by Status"
           />
         </Form>
-      </FormContainer> */}
+      </FormContainer>
       
     );
   };
+  
   return (
     <Container>
       <Content>
@@ -222,7 +207,7 @@ export default () => {
         </HeaderContent>
         {/* {searchBar()} */}
         {searchByPlace()}
-        {/* {searchByStatus()} */}
+        {searchByStatus()}
         {/* {searchByEmail()} */}
         <TabContent>
           <DecoratorBlob1 />
@@ -230,7 +215,7 @@ export default () => {
 
            {events.map((event, index)=> {
             console.log(user.email);
-            if (((query1=="")||(query1!="" && event.title.match(query1))) && (event.email.match(user.email)) ) {
+            if (((query1=="" && query2=="")|| (query2!="" && event.title.match(query2)) ||(query1!="" && event.title.match(query1))) && (event.email.match(user.email)) ) {
               return (
                 <Card key={index}>
            <CardImage imageSrc={event.img} />

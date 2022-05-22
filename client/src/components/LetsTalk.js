@@ -7,7 +7,7 @@ import {
   Subheading as SubheadingBase,
 } from "components/misc/Headings.js";
 import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
-import EmailIllustrationSrc from "images/email-illustration.svg";
+import EmailIllustrationSrc from "images/Envelope-amico.svg";
 import ContactService from "../Services/ContactService";
 import ReactDOM from "react-dom";
 
@@ -18,8 +18,8 @@ const ImageColumn = tw(Column)`md:w-5/12 flex-shrink-0 h-80 md:h-auto`;
 const TextColumn = styled(Column)((props) => [
   tw`md:w-7/12 mt-16 md:mt-0`,
   props.textOnLeft
-    ? tw`md:mr-12 lg:mr-16 md:order-first`
-    : tw`md:ml-12 lg:ml-16 md:order-last`,
+    ? tw`md:ml-12 lg:ml-16 md:order-last`
+    : tw`md:mr-12 lg:mr-16 md:order-first`,
 ]);
 
 const Image = styled.div((props) => [
@@ -40,17 +40,17 @@ const Textarea = styled(Input).attrs({ as: "textarea" })`
   ${tw`h-24`}
 `;
 
-const SubmitButton = tw(PrimaryButtonBase)`inline-block mt-8`;
+const SubmitButton = tw(PrimaryButtonBase)`rounded-full inline-block mt-8`;
 
 export default ({
   subheading = "Contact Us",
   heading = (
     <>
-      <span tw="text-primary-500">Have any</span>
-      <wbr /> suggestions / feedback / ideas?
+      <span tw="text-primary-500">Want to </span>
+      <wbr />give feedback/ Suggestions?
     </>
   ),
-  description = "Send a mail directly to the club",
+  description = "Send a mail directly to the Us!",
   submitButtonText = "Send",
   formAction = "#",
   formMethod = "get",

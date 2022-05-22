@@ -117,10 +117,10 @@ export default () => {
   const onChange1 = (e) => {
     setQuery1(e.target.value);
   };
-  // const [query2, setQuery2] = useState("");
-  // const onChange2 = (e) => {
-  //   setQuery2(e.target.value);
-  // };
+  const [query2, setQuery2] = useState("");
+  const onChange2 = (e) => {
+    setQuery2(e.target.value);
+  };
   const [query3, setQuery3] = useState("");
   const onChange3 = (e) => {
     setQuery3(e.target.value);
@@ -183,22 +183,22 @@ export default () => {
       
     );
   };
-//  const searchByStatus = () => {
-//     return (
-//       <FormContainer>
-//         <Form onSubmit={onSubmit}>
-//           <Input
-//             type="search"
-//             name="searchbystatus"
-//             onChange={onChange2}
-//             value={query2}
-//             placeholder="Search by Status"
-//           />
-//         </Form>
-//       </FormContainer>
+ const searchByStatus = () => {
+    return (
+      <FormContainer>
+        <Form onSubmit={onSubmit}>
+          <Input
+            type="search"
+            name="searchbystatus"
+            onChange={onChange2}
+            value={query2}
+            placeholder="Search by Status"
+          />
+        </Form>
+      </FormContainer>
       
-//     );
-//   };
+    );
+  };
   const searchByEmail = () => {
     return (
       <FormContainer>
@@ -224,7 +224,7 @@ export default () => {
         </HeaderContent>
         {/* {searchBar()} */}
         {searchByPlace()}
-        {/* {searchByStatus()} */}
+        {searchByStatus()}
         {searchByEmail()}
         <TabContent>
           <DecoratorBlob1 />
@@ -232,7 +232,7 @@ export default () => {
            {events.map((event, index)=> {
             //  console.log("hey", query1,event.title,event.title.match(query1) )
             //  console.log("hello", query3, "hey",event.email,event.title.match(query3) )
-            if ((query1=="" && query3=="")||(query1!="" && event.title.match(query1))||(query3!="" && event.email.match(query3) )) {
+            if ((query1=="" && query2=="" && query3=="")|| (query2!="" && event.status.match(query2)) ||(query1!="" && event.title.match(query1))||(query3!="" && event.email.match(query3) )) {
               return (
                 <Card key={index}>
            <CardImage imageSrc={event.img} />
