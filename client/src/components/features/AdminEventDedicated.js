@@ -167,6 +167,7 @@ const approve=()=>{
     contact: event.contact,
     status:"Appoved",
     email: event.email,
+    account:event.account
   };
 EventService.editEvent(newEvent, SEID).then((data) => {
 const { message } = data;
@@ -195,7 +196,8 @@ const transfer = async () => {
     
       const tx = {
         from: currentAccount,
-        to: '0x2A3a6eB82C5f831C1928993eb0FD0FCE75e32cdc',
+        // to: '0x2A3a6eB82C5f831C1928993eb0FD0FCE75e32cdc',
+        to:event.account,
         value: '6F05B59D3B20000',
         gas: '0x5208'
       }
