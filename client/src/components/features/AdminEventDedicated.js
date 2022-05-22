@@ -1,4 +1,5 @@
 import React from "react";
+import  { useState, useRef, useEffect } from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
@@ -9,7 +10,16 @@ import {
 import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
 import StatsIllustrationSrc from "images/stats-illustration.svg";
 import { ReactComponent as SvgDotPattern } from "images/dot-pattern.svg";
-
+import EventService from "../../Services/EventService";
+import Header, {
+    NavLink,
+    NavLinks,
+    LogoLink,
+    NavToggle,
+    DesktopNavLinks,
+    PrimaryLink as PrimaryLinkBase,
+  } from "../headers/light.js";
+const PrimaryLink = tw(PrimaryLinkBase)`rounded-full`;
 const Container = tw.div`relative`;
 const TwoColumn = tw.div`flex flex-col md:flex-row justify-between max-w-screen-xl mx-auto py-20 md:py-24`;
 const Column = tw.div`w-full max-w-md mx-auto md:max-w-none md:mx-0`;
@@ -60,6 +70,7 @@ export default ({
   imageInsideDiv = true,
   statistics = null,
   textOnLeft = false,
+  SEID="",
   event = {},
 }) => {
   // The textOnLeft boolean prop can be used to display either the text on left or right side of the image.
@@ -78,6 +89,43 @@ export default ({
     //   value: "1000+",
     // },
   ];
+
+  const [message, setMessage] = useState(event);
+  let timerID = useRef(event);
+  useEffect(() => {
+    return () => {
+      clearTimeout(timerID);
+    };
+  }, []);
+  const reject = () => {
+    const newEvent = {
+        title:  event.title ,
+        img:  event.img,
+        date: event.date ,
+        time: event.time,
+        description: event.description,
+        contact: event.contact,
+        status:"rejected",
+        email: event.status,
+      };
+  EventService.editEvent(newEvent, SEID).then((data) => {
+    const { message } = data;
+    setMessage(message);
+    console.log("updated status")
+    console.log(data);
+    console.log("updated data")
+    if (!message.msgError) {
+      timerID = setTimeout(() => {
+        //   props.history.push("/#/add");
+      }, 2000);
+    }
+  });
+  
+  
+  
+  }
+
+  
 
   if (!statistics) statistics = defaultStatistics;
   const d = async () => {
@@ -140,13 +188,7 @@ export default ({
                   : null
                 : heading}
             </Heading>
-            <Heading>
-              {(event ? event.status : null)
-                ? event
-                  ? event.status
-                  : null
-                : heading}
-            </Heading>
+           
             <Description>
               {" "}
               {(event ? event.description : null)
@@ -181,15 +223,22 @@ export default ({
             </Statistics>
             <Statistics>
             <Statistic key={1}>
-                <Key><PrimaryButton as="a" href={"www.google.com"} target="_blank">
-              {"Pay Now"}
-            </PrimaryButton></Key>
-            
+            <Key>  <button>
+              <PrimaryLink
+                onClick={reject}
+              >
+               Pay Now
+              </PrimaryLink>
+            </button></Key>
               </Statistic>
               <Statistic key={2}>
-                <Key><PrimaryButton as="a" href={"www.google.com"} target="_blank">
-              {"Reject"}
-            </PrimaryButton></Key>
+                <Key>  <button>
+              <PrimaryLink
+                onClick={reject}
+              >
+               Reject
+              </PrimaryLink>
+            </button></Key>
             
             
               </Statistic>
